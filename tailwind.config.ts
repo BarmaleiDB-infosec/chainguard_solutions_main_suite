@@ -54,9 +54,9 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				neon: {
-					red: 'hsl(var(--neon-red))',
-					yellow: 'hsl(var(--neon-yellow))',
-					green: 'hsl(var(--neon-green))'
+					violet: 'hsl(var(--neon-violet))',
+					gold: 'hsl(var(--neon-gold))',
+					subtle: 'hsl(var(--neon-subtle))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -77,7 +77,7 @@ export default {
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-violet-gold': 'var(--gradient-violet-gold)',
-				'gradient-neon': 'var(--gradient-neon)'
+				'gradient-subtle': 'var(--gradient-subtle)'
 			},
 			boxShadow: {
 				'neon': 'var(--shadow-neon)',

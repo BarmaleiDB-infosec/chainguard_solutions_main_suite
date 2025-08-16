@@ -30,9 +30,9 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   const getCategoryColor = (cat: string) => {
     switch (cat.toLowerCase()) {
-      case 'security': return 'bg-neon-red/20 text-neon-red border-neon-red/30';
-      case 'analytics': return 'bg-neon-yellow/20 text-neon-yellow border-neon-yellow/30';
-      case 'ai': return 'bg-neon-green/20 text-neon-green border-neon-green/30';
+      case 'security': return 'bg-neon-violet/20 text-neon-violet border-neon-violet/30';
+      case 'analytics': return 'bg-neon-gold/20 text-neon-gold border-neon-gold/30';
+      case 'ai': return 'bg-neon-subtle/20 text-neon-subtle border-neon-subtle/30';
       default: return 'bg-primary/20 text-primary border-primary/30';
     }
   };
@@ -79,7 +79,7 @@ export const ProductCard = ({
         <div className="mb-6">
           <div className="text-2xl font-bold text-foreground">
             {isFree ? (
-              <span className="text-neon-green">Free</span>
+              <span className="text-neon-gold">Free</span>
             ) : (
               <span className="bg-gradient-violet-gold bg-clip-text text-transparent">
                 {price}
@@ -92,7 +92,7 @@ export const ProductCard = ({
           variant={isFree ? "outline" : isPremium ? "default" : "secondary"}
           className={`w-full group-hover:shadow-neon transition-all duration-300 ${
             isFree 
-              ? "border-neon-green text-neon-green hover:bg-neon-green hover:text-white" 
+              ? "border-neon-gold text-neon-gold hover:bg-neon-gold hover:text-background" 
               : isPremium 
                 ? "bg-gradient-violet-gold hover:shadow-gold" 
                 : ""

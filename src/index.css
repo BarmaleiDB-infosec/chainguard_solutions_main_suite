@@ -8,56 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* ChainGuard Design System - Deep Violet & Gold with Neon Sovereignty */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
+    /* ChainGuard Design System - Dark Theme with Subtle Neon Elegance */
+    --background: 203 23% 11%; /* Deep charcoal #1C2526 */
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card: 203 23% 13%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --popover: 203 23% 13%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary: Deep Violet (#4B0082) */
+    /* Primary: Subtle Violet (#4B0082) */
     --primary: 275 100% 25.5%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 275 100% 35%;
+    --primary-glow: 275 60% 45%;
 
-    /* Secondary: Gold (#FFD700) */
-    --secondary: 51 100% 50%;
-    --secondary-foreground: 0 0% 20%;
+    /* Secondary: Soft Gold (#D4AF37) */
+    --secondary: 43 74% 52%;
+    --secondary-foreground: 0 0% 10%;
 
-    /* Muted: Grayscale */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 20%;
+    /* Muted: Dark Grayscale */
+    --muted: 203 23% 16%;
+    --muted-foreground: 0 0% 66%; /* #A9A9A9 */
 
-    /* Accent: Neon Effects */
+    /* Accent: Subtle Neon */
     --accent: 275 100% 25.5%;
     --accent-foreground: 0 0% 100%;
 
-    /* Neon Colors */
-    --neon-red: 0 100% 50%;
-    --neon-yellow: 60 100% 50%;
-    --neon-green: 120 100% 50%;
+    /* Subtle Neon Colors */
+    --neon-violet: 275 100% 25.5%;
+    --neon-gold: 43 74% 52%;
+    --neon-subtle: 275 60% 45%;
 
     /* Destructive */
-    --destructive: 0 100% 50%;
+    --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 275 20% 90%;
-    --input: 275 20% 96%;
+    --border: 203 23% 20%;
+    --input: 203 23% 16%;
     --ring: 275 100% 25.5%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(275 100% 25.5%), hsl(0 0% 0%));
-    --gradient-violet-gold: linear-gradient(135deg, hsl(275 100% 25.5%), hsl(51 100% 50%));
-    --gradient-neon: linear-gradient(90deg, hsl(0 100% 50%), hsl(60 100% 50%), hsl(120 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(275 100% 25.5%), hsl(203 23% 11%));
+    --gradient-violet-gold: linear-gradient(135deg, hsl(275 100% 25.5%), hsl(43 74% 52%));
+    --gradient-subtle: linear-gradient(180deg, hsl(203 23% 13%), hsl(203 23% 11%));
 
-    /* Shadows */
-    --shadow-neon: 0 0 15px hsl(275 100% 35%);
-    --shadow-gold: 0 0 20px hsl(51 100% 50% / 0.3);
-    --shadow-elegant: 0 10px 30px -10px hsl(275 100% 25.5% / 0.3);
+    /* Subtle Shadows */
+    --shadow-neon: 0 0 10px hsl(275 100% 25.5% / 0.3);
+    --shadow-gold: 0 0 15px hsl(43 74% 52% / 0.2);
+    --shadow-elegant: 0 10px 30px -10px hsl(275 100% 25.5% / 0.2);
 
     --radius: 0.5rem;
 
@@ -79,41 +79,42 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Enhanced dark mode with consistent theming */
+    --background: 203 23% 9%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 203 23% 11%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 203 23% 11%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 275 100% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 43 74% 58%;
+    --secondary-foreground: 0 0% 5%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 203 23% 14%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 275 100% 30%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 203 23% 18%;
+    --input: 203 23% 14%;
+    --ring: 275 100% 30%;
+    --sidebar-background: 203 23% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 275 100% 25.5%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 203 23% 14%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 203 23% 18%;
+    --sidebar-ring: 275 100% 30%;
   }
 }
 
@@ -124,5 +125,38 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll Progress Bar */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    z-index: 9999;
+    transition: width 0.3s ease;
+  }
+
+  /* Neon Pulse Animation */
+  @keyframes neon-pulse {
+    0% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4); }
+    70% { box-shadow: 0 0 10px 5px hsl(var(--primary) / 0); }
+    100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+  }
+
+  .neon-pulse {
+    animation: neon-pulse 2s infinite;
+  }
+
+  /* Subtle Glow Effect */
+  .subtle-glow {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .subtle-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
   }
 }

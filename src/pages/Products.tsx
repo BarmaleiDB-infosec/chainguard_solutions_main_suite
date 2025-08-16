@@ -13,19 +13,19 @@ const Products = () => {
       icon: Shield,
       value: "500K+",
       label: "Transactions Secured",
-      color: "text-neon-red"
+      color: "text-neon-violet"
     },
     {
       icon: Users,
       value: "10K+", 
       label: "Active Users",
-      color: "text-neon-yellow"
+      color: "text-neon-gold"
     },
     {
       icon: TrendingUp,
       value: "99.9%",
       label: "Uptime",
-      color: "text-neon-green"
+      color: "text-neon-subtle"
     },
     {
       icon: Zap,
@@ -102,7 +102,7 @@ const Products = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="hover:shadow-elegant transition-all duration-300 border-border/50">
                 <CardHeader>
-                  <Shield className="h-12 w-12 text-neon-red mb-4" />
+                  <Shield className="h-12 w-12 text-neon-violet mb-4" />
                   <CardTitle className="text-xl">Enterprise Security</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -115,7 +115,7 @@ const Products = () => {
 
               <Card className="hover:shadow-elegant transition-all duration-300 border-border/50">
                 <CardHeader>
-                  <TrendingUp className="h-12 w-12 text-neon-yellow mb-4" />
+                  <TrendingUp className="h-12 w-12 text-neon-gold mb-4" />
                   <CardTitle className="text-xl">Advanced Analytics</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -128,7 +128,7 @@ const Products = () => {
 
               <Card className="hover:shadow-elegant transition-all duration-300 border-border/50">
                 <CardHeader>
-                  <Zap className="h-12 w-12 text-neon-green mb-4" />
+                  <Zap className="h-12 w-12 text-neon-subtle mb-4" />
                   <CardTitle className="text-xl">Smart Automation</CardTitle>
                 </CardHeader>
                 <CardContent>

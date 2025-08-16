@@ -4,6 +4,7 @@ import { About } from "@/components/About";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
+import { ScrollVisualization, AnimatedSection } from "@/components/ScrollVisualization";
 
 /**
  * ChainGuard Homepage - Web3 Security Platform
@@ -12,6 +13,7 @@ import { Rocket } from "lucide-react";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollVisualization />
       <Header />
       
       <main>
@@ -19,30 +21,36 @@ const Index = () => {
         <Hero />
         
         {/* About Section */}
-        <About />
+        <AnimatedSection delay={200}>
+          <About />
+        </AnimatedSection>
         
         {/* Featured Products Preview */}
-        <section className="py-16 px-4 bg-gradient-hero/10">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Ready to Secure Your Web3 Journey?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of Web3 enthusiasts who trust ChainGuard to protect their digital assets and maximize opportunities.
-            </p>
-            <Button 
-              variant="hero" 
-              size="lg"
-              className="animate-pulse-glow"
-            >
-              <Rocket className="mr-2 h-5 w-5" />
-              Explore Our Arsenal
-            </Button>
-          </div>
-        </section>
+        <AnimatedSection delay={400}>
+          <section className="py-16 px-4 bg-gradient-subtle/20">
+            <div className="container mx-auto max-w-4xl text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                Ready to Secure Your Web3 Journey?
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Join thousands of Web3 enthusiasts who trust ChainGuard to protect their digital assets and maximize opportunities.
+              </p>
+              <Button 
+                variant="hero" 
+                size="lg"
+                className="neon-pulse subtle-glow"
+              >
+                <Rocket className="mr-2 h-5 w-5" />
+                Explore Our Arsenal
+              </Button>
+            </div>
+          </section>
+        </AnimatedSection>
 
         {/* Products Grid Preview */}
-        <ProductGrid />
+        <AnimatedSection delay={600}>
+          <ProductGrid />
+        </AnimatedSection>
       </main>
 
       {/* Footer */}

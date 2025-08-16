@@ -13,10 +13,10 @@ export const ProductGrid = () => {
     {
       id: 1,
       title: "Drop Hunting Sector Intel",
-      description: "Weekly updated whale maps and strategic drop tracking for maximum airdrop opportunities.",
-      price: "$24.99",
+      description: "Weekly updated PDF guide with whale maps and strategic drop tracking for maximum airdrop opportunities.",
+      price: "$4.99",
       category: "Analytics",
-      buttonText: "Buy on Gumroad",
+      buttonText: "Buy PDF Guide",
       buttonUrl: "https://barmacrpt.gumroad.com/l/jrgk",
       isPremium: false,
       isFree: false
@@ -24,10 +24,10 @@ export const ProductGrid = () => {
     {
       id: 2,
       title: "DeFi Safety Snapshot",
-      description: "90-second rug pull detection with comprehensive PDF templates and real case studies.",
+      description: "90-sec Rug Check PDF guide with comprehensive templates and real case studies.",
       price: "$9.99",
       category: "Security",
-      buttonText: "Buy on Gumroad", 
+      buttonText: "Buy PDF Guide", 
       buttonUrl: "https://barmacrpt.gumroad.com/l/vunhtv",
       isPremium: false,
       isFree: false
@@ -35,10 +35,10 @@ export const ProductGrid = () => {
     {
       id: 3,
       title: "Eligibility Scorecard",
-      description: "Automated wallet eligibility scoring system for airdrop qualification assessment.",
+      description: "Automated wallet eligibility scoring PDF guide for airdrop qualification assessment.",
       price: "Free",
       category: "Analytics",
-      buttonText: "Download Template",
+      buttonText: "Download PDF Template",
       buttonUrl: "#",
       isPremium: false,
       isFree: true
@@ -46,10 +46,10 @@ export const ProductGrid = () => {
     {
       id: 4,
       title: "AirScout",
-      description: "AI-driven niche analysis with real-time alerts for emerging opportunities and threats.",
+      description: "AI-driven niche analysis web tool with real-time alerts for emerging opportunities and threats.",
       price: "Freemium",
       category: "AI",
-      buttonText: "Try Free",
+      buttonText: "Try Web Tool",
       buttonUrl: "#",
       isPremium: true,
       isFree: false
