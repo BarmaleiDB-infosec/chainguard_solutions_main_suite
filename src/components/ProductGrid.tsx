@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProductCard } from "./ProductCard";
+import { useTranslation } from "react-i18next";
 
 /**
  * Product Grid Component
@@ -8,70 +9,60 @@ import { ProductCard } from "./ProductCard";
  */
 export const ProductGrid = () => {
   const [activeTab, setActiveTab] = useState("all");
+  const { t } = useTranslation();
 
   const products = [
     {
       id: 1,
-      title: "Drop Hunting Sector Intel",
-      description: "Weekly updated PDF guide with whale maps and strategic drop tracking for maximum airdrop opportunities.",
-      price: "$4.99",
-      category: "Analytics",
-      buttonText: "Buy PDF Guide",
-      buttonUrl: "https://barmacrpt.gumroad.com/l/jrgk",
+      title: t('product.smartContracts.title'),
+      description: t('product.smartContracts.description'),
+      price: "€3",
+      category: "Security",
+      buttonText: t('product.smartContracts.button'),
+      buttonUrl: "https://barmacrpt.gumroad.com/l/mrhvgn",
       isPremium: false,
       isFree: false
     },
     {
       id: 2,
-      title: "DeFi Safety Snapshot",
-      description: "90-sec Rug Check PDF guide with comprehensive templates and real case studies.",
-      price: "$9.99",
-      category: "Security",
-      buttonText: "Buy PDF Guide", 
-      buttonUrl: "https://barmacrpt.gumroad.com/l/vunhtv",
+      title: t('product.whaleTracker.title'),
+      description: t('product.whaleTracker.description'),
+      price: "€9.99",
+      category: "Analytics",
+      buttonText: t('product.whaleTracker.button'),
+      buttonUrl: "https://barmacrpt.gumroad.com/l/ljrgk",
       isPremium: false,
       isFree: false
     },
     {
       id: 3,
-      title: "Eligibility Scorecard",
-      description: "Automated wallet eligibility scoring PDF guide for airdrop qualification assessment.",
-      price: "Free",
+      title: t('product.airdropEligibility.title'),
+      description: t('product.airdropEligibility.description'),
+      price: "€5",
       category: "Analytics",
-      buttonText: "Download PDF Template",
-      buttonUrl: "#",
+      buttonText: t('product.airdropEligibility.button'),
+      buttonUrl: "https://barmacrpt.gumroad.com/l/jvgauo",
       isPremium: false,
-      isFree: true
+      isFree: false
     },
     {
       id: 4,
-      title: "AirScout",
-      description: "AI-driven niche analysis web tool with real-time alerts for emerging opportunities and threats.",
-      price: "Freemium",
-      category: "AI",
-      buttonText: "Try Web Tool",
-      buttonUrl: "#",
-      isPremium: true,
+      title: t('product.defiSafety.title'),
+      description: t('product.defiSafety.description'),
+      price: "€9.99",
+      category: "Security",
+      buttonText: t('product.defiSafety.button'),
+      buttonUrl: "https://barmacrpt.gumroad.com/l/ounhfv",
+      isPremium: false,
       isFree: false
     },
     {
       id: 5,
-      title: "Smart Contract Guardian",
-      description: "Advanced contract auditing with vulnerability scanning and security recommendations.",
-      price: "$49.99",
-      category: "Security",
-      buttonText: "Purchase Now",
-      buttonUrl: "#",
-      isPremium: false,
-      isFree: false
-    },
-    {
-      id: 6,
-      title: "Whale Tracker Pro",
-      description: "Professional whale movement analysis with predictive market intelligence insights.",
-      price: "$34.99",
-      category: "Analytics",
-      buttonText: "Get Access",
+      title: t('product.airscout.title'),
+      description: t('product.airscout.description'),
+      price: t('freemium'),
+      category: "AI",
+      buttonText: t('product.airscout.button'),
       buttonUrl: "#",
       isPremium: true,
       isFree: false
@@ -86,10 +77,10 @@ export const ProductGrid = () => {
   };
 
   const tabsData = [
-    { value: "all", label: "All Products", count: products.length },
-    { value: "security", label: "Security", count: products.filter(p => p.category === "Security").length },
-    { value: "analytics", label: "Analytics", count: products.filter(p => p.category === "Analytics").length },
-    { value: "ai", label: "AI Tools", count: products.filter(p => p.category === "AI").length }
+    { value: "all", label: t('products.allProducts'), count: products.length },
+    { value: "security", label: t('products.security'), count: products.filter(p => p.category === "Security").length },
+    { value: "analytics", label: t('products.analytics'), count: products.filter(p => p.category === "Analytics").length },
+    { value: "ai", label: t('products.ai'), count: products.filter(p => p.category === "AI").length }
   ];
 
   return (
@@ -97,10 +88,10 @@ export const ProductGrid = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Security Arsenal
+            {t('products.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive Web3 tools designed to protect, analyze, and optimize your digital assets
+            {t('products.subtitle')}
           </p>
         </div>
 

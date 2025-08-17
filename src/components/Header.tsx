@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Shield, Menu, User, Settings, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 /**
  * Header Component with Navigation and User Menu
@@ -15,6 +17,18 @@ import { useNavigate } from "react-router-dom";
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const handleAboutClick = () => {
+    if (window.location.pathname === '/') {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/#about');
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -41,25 +55,27 @@ export const Header = () => {
               onClick={() => navigate("/")}
               className="text-foreground hover:text-primary"
             >
-              Home
+              {t('home')}
             </Button>
             <Button 
               variant="ghost" 
               onClick={() => navigate("/products")}
               className="text-foreground hover:text-primary"
             >
-              Products
+              {t('products')}
             </Button>
             <Button 
               variant="ghost"
+              onClick={handleAboutClick}
               className="text-foreground hover:text-primary"
             >
-              About
+              {t('about')}
             </Button>
           </nav>
 
           {/* User Menu */}
           <div className="flex items-center space-x-4">
+            <LanguageSwitcher />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button 
@@ -79,18 +95,18 @@ export const Header = () => {
                   className="cursor-pointer hover:bg-primary/10"
                 >
                   <User className="mr-2 h-4 w-4" />
-                  Profile
+                  {t('profile')}
                 </DropdownMenuItem>
                 <DropdownMenuItem 
                   onClick={() => navigate("/settings")}
                   className="cursor-pointer hover:bg-primary/10"
                 >
                   <Settings className="mr-2 h-4 w-4" />
-                  Settings
+                  {t('settings')}
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer hover:bg-destructive/10 text-destructive">
                   <LogOut className="mr-2 h-4 w-4" />
-                  Logout
+                  {t('logout')}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -116,20 +132,21 @@ export const Header = () => {
                 onClick={() => navigate("/")}
                 className="justify-start"
               >
-                Home
+                {t('home')}
               </Button>
               <Button 
                 variant="ghost" 
                 onClick={() => navigate("/products")}
                 className="justify-start"
               >
-                Products
+                {t('products')}
               </Button>
               <Button 
                 variant="ghost"
+                onClick={handleAboutClick}
                 className="justify-start"
               >
-                About
+                {t('about')}
               </Button>
             </div>
           </nav>

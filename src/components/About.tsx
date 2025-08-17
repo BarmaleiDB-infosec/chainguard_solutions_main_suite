@@ -1,43 +1,43 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, BarChart3, Bot, Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 /**
  * About Section Component
  * Showcases ChainGuard's core offerings with animated cards
  */
 export const About = () => {
+  const { t } = useTranslation();
   const features = [
     {
       icon: Shield,
-      title: "Security",
+      title: t('products.security'),
       description: "Advanced rug pull detection, smart contract auditing, and real-time threat monitoring.",
       gradient: "from-neon-violet to-primary"
     },
     {
       icon: BarChart3,
-      title: "Analytics", 
+      title: t('products.analytics'),
       description: "Comprehensive wallet analysis, whale tracking, and market intelligence insights.",
       gradient: "from-neon-blue to-secondary"
     },
     {
       icon: Bot,
-      title: "AI Automation",
+      title: t('products.ai'),
       description: "Intelligent airdrop hunting, automated trading alerts, and portfolio optimization.",
       gradient: "from-neon-purple to-neon-cyan"
     }
   ];
 
   return (
-    <section className="py-24 px-4 bg-background">
+    <section id="about" className="py-24 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            The Web3 Security Ecosystem
+            {t('about.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            ChainGuard is a comprehensive ecosystem of tools designed for Web3 security, 
-            advanced analytics, and intelligent automation. Protecting your digital assets 
-            while maximizing opportunities in the decentralized frontier.
+            {t('about.description')}
           </p>
         </div>
 
@@ -75,24 +75,20 @@ export const About = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <Zap className="h-8 w-8 text-primary" />
-              <h3 className="text-2xl font-bold text-foreground">Mission</h3>
+              <h3 className="text-2xl font-bold text-foreground">{t('about.mission.title')}</h3>
             </div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              To make blockchain technology safe, transparent, and accessible to all. 
-              We're democratizing Web3 security by providing enterprise-grade tools 
-              through a freemium model that removes barriers of cost and complexity.
+              {t('about.mission.description')}
             </p>
           </div>
 
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <Shield className="h-8 w-8 text-secondary" />
-              <h3 className="text-2xl font-bold text-foreground">Vision</h3>
+              <h3 className="text-2xl font-bold text-foreground">{t('about.vision.title')}</h3>
             </div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              To become the premier shield and navigator in the Web3 ecosystem within 3-5 years. 
-              Our goal is to secure 1 trillion transactions annually and serve as the gold standard 
-              for decentralized security solutions worldwide.
+              {t('about.vision.description')}
             </p>
           </div>
         </div>

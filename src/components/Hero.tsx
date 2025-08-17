@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Zap, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Hero Section Component for ChainGuard
  * Features neon-styled logo, gradient background, and animated elements
  */
 export const Hero = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <section className="min-h-screen bg-gradient-hero flex items-center justify-center px-4 relative overflow-hidden">
       {/* Scroll Progress Bar */}
@@ -34,15 +38,15 @@ export const Hero = () => {
 
         {/* Main heading with gradient text */}
         <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-neon bg-clip-text text-transparent neon-pulse">
-          ChainGuard
+          {t('hero.title')}
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-secondary font-semibold mb-4">
-          Your Shield in Web3
+          {t('hero.subtitle')}
         </h2>
 
         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-          Security. Analytics. Solutions. The ultimate fortress for Web3 guardianship.
+          {t('hero.description')}
         </p>
 
         {/* CTA Buttons */}
@@ -53,22 +57,23 @@ export const Hero = () => {
             className="min-w-[200px] electric-pulse subtle-glow bg-gradient-electric border-none text-background font-bold"
           >
             <Zap className="mr-2 h-5 w-5" />
-            Try Free
+            {t('hero.tryFree')}
           </Button>
           
           <Button 
             variant="outline" 
             size="lg"
+            onClick={() => navigate('/products')}
             className="min-w-[200px] border-primary text-primary hover:bg-primary hover:text-background futuristic-border"
           >
             <TrendingUp className="mr-2 h-5 w-5" />
-            Explore Products
+            {t('hero.exploreProducts')}
           </Button>
         </div>
 
         {/* Trust indicators */}
         <div className="mt-16 text-muted-foreground">
-          <p className="text-sm mb-4">Trusted by Web3 pioneers worldwide</p>
+          <p className="text-sm mb-4">{t('hero.trusted')}</p>
           <div className="flex justify-center items-center space-x-8 opacity-70">
             <div className="text-2xl font-bold text-secondary">500K+</div>
             <div className="text-muted-foreground/50">|</div>
@@ -77,11 +82,11 @@ export const Hero = () => {
             <div className="text-2xl font-bold text-secondary">99.9%</div>
           </div>
           <div className="flex justify-center items-center space-x-8 text-xs mt-2">
-            <div>Transactions Secured</div>
+            <div>{t('hero.transactions')}</div>
             <div></div>
-            <div>Countries</div>
+            <div>{t('hero.countries')}</div>
             <div></div>
-            <div>Uptime</div>
+            <div>{t('hero.uptime')}</div>
           </div>
         </div>
       </div>
