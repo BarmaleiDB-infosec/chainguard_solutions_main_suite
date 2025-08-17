@@ -105,15 +105,17 @@ export const ProductGrid = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-12 bg-card/50 backdrop-blur-sm">
-            {tabsData.map((tab) => (
+          <TabsList className="grid w-full grid-cols-4 mb-12 bg-card/30 backdrop-blur-md border border-primary/20 shadow-neon">
+            {tabsData.map((tab, index) => (
               <TabsTrigger 
                 key={tab.value}
                 value={tab.value}
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-neon transition-all duration-300"
+                className="relative futuristic-border data-[state=active]:bg-gradient-neon data-[state=active]:text-background data-[state=active]:shadow-purple electric-pulse data-[state=active]:font-bold transition-all duration-500 animate-tab-enter"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <span>{tab.label}</span>
-                <span className="ml-2 text-xs opacity-70">({tab.count})</span>
+                <span className="relative z-10">{tab.label}</span>
+                <span className="ml-2 text-xs opacity-70 relative z-10">({tab.count})</span>
+                <div className="absolute inset-0 bg-gradient-electric opacity-0 data-[state=active]:opacity-100 transition-opacity duration-300 rounded-md"></div>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -124,8 +126,8 @@ export const ProductGrid = () => {
                 {filterProducts(tab.value).map((product, index) => (
                   <div 
                     key={product.id}
-                    className="animate-fade-in"
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    className="slide-in-glow"
+                    style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <ProductCard
                       title={product.title}

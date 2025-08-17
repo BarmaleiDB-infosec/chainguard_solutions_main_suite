@@ -8,56 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* ChainGuard Design System - Dark Theme with Subtle Neon Elegance */
-    --background: 203 23% 11%; /* Deep charcoal #1C2526 */
-    --foreground: 0 0% 95%;
+    /* ChainGuard Futuristic Design System - Purple/Blue/Black/White Only */
+    --background: 0 0% 6%; /* Deep black */
+    --foreground: 0 0% 98%; /* Pure white */
 
-    --card: 203 23% 13%;
+    --card: 240 15% 8%; /* Dark blue-black */
     --card-foreground: 0 0% 95%;
 
-    --popover: 203 23% 13%;
+    --popover: 240 15% 8%;
     --popover-foreground: 0 0% 95%;
 
-    /* Primary: Subtle Violet (#4B0082) */
-    --primary: 275 100% 25.5%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 275 60% 45%;
+    /* Primary: Electric Violet */
+    --primary: 258 100% 65%; /* Bright electric violet */
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 258 100% 75%;
 
-    /* Secondary: Soft Gold (#D4AF37) */
-    --secondary: 43 74% 52%;
-    --secondary-foreground: 0 0% 10%;
+    /* Secondary: Electric Blue */
+    --secondary: 220 100% 55%; /* Electric blue */
+    --secondary-foreground: 0 0% 0%;
 
-    /* Muted: Dark Grayscale */
-    --muted: 203 23% 16%;
-    --muted-foreground: 0 0% 66%; /* #A9A9A9 */
+    /* Muted: Dark Blue */
+    --muted: 240 20% 12%;
+    --muted-foreground: 220 15% 70%;
 
-    /* Accent: Subtle Neon */
-    --accent: 275 100% 25.5%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent: Neon Purple */
+    --accent: 275 100% 60%;
+    --accent-foreground: 0 0% 0%;
 
-    /* Subtle Neon Colors */
-    --neon-violet: 275 100% 25.5%;
-    --neon-gold: 43 74% 52%;
-    --neon-subtle: 275 60% 45%;
+    /* Neon Colors - Only Purple/Blue spectrum */
+    --neon-violet: 275 100% 65%;
+    --neon-purple: 258 100% 70%;
+    --neon-blue: 220 100% 65%;
+    --neon-cyan: 195 100% 70%;
 
     /* Destructive */
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 203 23% 20%;
-    --input: 203 23% 16%;
-    --ring: 275 100% 25.5%;
+    --border: 240 20% 15%;
+    --input: 240 20% 10%;
+    --ring: 258 100% 65%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(275 100% 25.5%), hsl(203 23% 11%));
-    --gradient-violet-gold: linear-gradient(135deg, hsl(275 100% 25.5%), hsl(43 74% 52%));
-    --gradient-subtle: linear-gradient(180deg, hsl(203 23% 13%), hsl(203 23% 11%));
+    /* Futuristic Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(258 100% 65%), hsl(220 100% 55%), hsl(0 0% 6%));
+    --gradient-neon: linear-gradient(90deg, hsl(275 100% 65%), hsl(258 100% 70%), hsl(220 100% 65%));
+    --gradient-electric: linear-gradient(45deg, hsl(258 100% 65%), hsl(195 100% 70%));
+    --gradient-dark: linear-gradient(180deg, hsl(240 15% 8%), hsl(0 0% 6%));
 
-    /* Subtle Shadows */
-    --shadow-neon: 0 0 10px hsl(275 100% 25.5% / 0.3);
-    --shadow-gold: 0 0 15px hsl(43 74% 52% / 0.2);
-    --shadow-elegant: 0 10px 30px -10px hsl(275 100% 25.5% / 0.2);
+    /* Advanced Neon Shadows */
+    --shadow-neon: 0 0 20px hsl(258 100% 65% / 0.5), 0 0 40px hsl(258 100% 65% / 0.3);
+    --shadow-blue: 0 0 20px hsl(220 100% 55% / 0.5), 0 0 40px hsl(220 100% 55% / 0.3);
+    --shadow-purple: 0 0 25px hsl(275 100% 65% / 0.6), 0 0 50px hsl(275 100% 65% / 0.4);
+    --shadow-elegant: 0 20px 40px -15px hsl(258 100% 65% / 0.4);
 
     --radius: 0.5rem;
 
@@ -79,42 +82,42 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Enhanced dark mode with consistent theming */
-    --background: 203 23% 9%;
-    --foreground: 0 0% 98%;
+    /* Enhanced futuristic dark mode */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 100%;
 
-    --card: 203 23% 11%;
+    --card: 240 20% 5%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 203 23% 11%;
+    --popover: 240 20% 5%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 275 100% 30%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 258 100% 70%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 43 74% 58%;
-    --secondary-foreground: 0 0% 5%;
+    --secondary: 220 100% 60%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 203 23% 14%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 240 25% 8%;
+    --muted-foreground: 220 20% 75%;
 
-    --accent: 275 100% 30%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 275 100% 65%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 203 23% 18%;
-    --input: 203 23% 14%;
-    --ring: 275 100% 30%;
-    --sidebar-background: 203 23% 9%;
+    --border: 240 25% 12%;
+    --input: 240 25% 8%;
+    --ring: 258 100% 70%;
+    --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 275 100% 25.5%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 203 23% 14%;
+    --sidebar-primary: 258 100% 65%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 240 20% 8%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 203 23% 18%;
-    --sidebar-ring: 275 100% 30%;
+    --sidebar-border: 240 25% 12%;
+    --sidebar-ring: 258 100% 70%;
   }
 }
 
@@ -128,35 +131,101 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  /* Scroll Progress Bar */
+  /* Enhanced Scroll Progress Bar */
   .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
-    height: 4px;
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--neon-violet)), hsl(var(--neon-purple)), hsl(var(--neon-blue)));
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.7);
     z-index: 9999;
-    transition: width 0.3s ease;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Neon Pulse Animation */
+  /* Advanced Neon Animations */
   @keyframes neon-pulse {
-    0% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4); }
-    70% { box-shadow: 0 0 10px 5px hsl(var(--primary) / 0); }
-    100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+    0% { 
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5), 0 0 10px hsl(var(--primary) / 0.3), 0 0 15px hsl(var(--primary) / 0.2);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 15px hsl(var(--primary) / 0.8), 0 0 25px hsl(var(--primary) / 0.5), 0 0 35px hsl(var(--primary) / 0.3);
+      transform: scale(1.02);
+    }
+    100% { 
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5), 0 0 10px hsl(var(--primary) / 0.3), 0 0 15px hsl(var(--primary) / 0.2);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes electric-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 10px hsl(var(--secondary) / 0.6), 0 0 20px hsl(var(--secondary) / 0.4);
+    }
+    50% { 
+      box-shadow: 0 0 20px hsl(var(--secondary) / 0.9), 0 0 40px hsl(var(--secondary) / 0.6), 0 0 60px hsl(var(--secondary) / 0.3);
+    }
+  }
+
+  @keyframes slide-in-glow {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      filter: blur(5px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateY(5px) scale(0.98);
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+      box-shadow: 0 0 15px hsl(var(--primary) / 0.3);
+    }
   }
 
   .neon-pulse {
-    animation: neon-pulse 2s infinite;
+    animation: neon-pulse 2s ease-in-out infinite;
   }
 
-  /* Subtle Glow Effect */
+  .electric-pulse {
+    animation: electric-pulse 1.5s ease-in-out infinite;
+  }
+
+  .slide-in-glow {
+    animation: slide-in-glow 0.8s cubic-bezier(0.23, 1, 0.320, 1) forwards;
+  }
+
+  /* Enhanced Glow Effects */
   .subtle-glow {
-    box-shadow: 0 0 10px hsl(var(--primary) / 0.2);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .subtle-glow:hover {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .futuristic-border {
+    position: relative;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .futuristic-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .futuristic-border:hover::before {
+    opacity: 1;
   }
 }

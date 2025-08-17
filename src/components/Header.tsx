@@ -29,7 +29,7 @@ export const Header = () => {
               <Shield className="h-8 w-8 text-primary" />
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-sm"></div>
             </div>
-            <span className="text-2xl font-bold bg-gradient-violet-gold bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-neon bg-clip-text text-transparent">
               ChainGuard
             </span>
           </div>

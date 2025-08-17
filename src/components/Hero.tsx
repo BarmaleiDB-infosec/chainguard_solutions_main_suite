@@ -11,12 +11,14 @@ export const Hero = () => {
       {/* Scroll Progress Bar */}
       <div className="scroll-progress w-0" id="scroll-progress"></div>
       
-      {/* Animated background particles - subtle and elegant */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-1 h-1 bg-neon-violet rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-32 w-1.5 h-1.5 bg-neon-gold rounded-full animate-ping"></div>
-        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-neon-subtle rounded-full animate-pulse"></div>
-      </div>
+        {/* Animated futuristic particles */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-20 w-2 h-2 bg-neon-violet rounded-full electric-pulse"></div>
+          <div className="absolute top-40 right-32 w-3 h-3 bg-neon-blue rounded-full animate-ping"></div>
+          <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-neon-purple rounded-full animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-neon-cyan rounded-full electric-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-1/4 right-20 w-1 h-1 bg-neon-violet rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+        </div>
 
       <div className="text-center z-10 max-w-4xl mx-auto animate-fade-in">
         {/* Logo with subtle neon glow effect */}
@@ -31,7 +33,7 @@ export const Hero = () => {
         </div>
 
         {/* Main heading with gradient text */}
-        <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-violet-gold bg-clip-text text-transparent">
+        <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-neon bg-clip-text text-transparent neon-pulse">
           ChainGuard
         </h1>
         
@@ -48,7 +50,7 @@ export const Hero = () => {
           <Button 
             variant="hero" 
             size="lg"
-            className="min-w-[200px] neon-pulse subtle-glow"
+            className="min-w-[200px] electric-pulse subtle-glow bg-gradient-electric border-none text-background font-bold"
           >
             <Zap className="mr-2 h-5 w-5" />
             Try Free
@@ -57,7 +59,7 @@ export const Hero = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="min-w-[200px] border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+            className="min-w-[200px] border-primary text-primary hover:bg-primary hover:text-background futuristic-border"
           >
             <TrendingUp className="mr-2 h-5 w-5" />
             Explore Products

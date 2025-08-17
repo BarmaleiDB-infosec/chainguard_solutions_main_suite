@@ -11,19 +11,19 @@ export const About = () => {
       icon: Shield,
       title: "Security",
       description: "Advanced rug pull detection, smart contract auditing, and real-time threat monitoring.",
-      gradient: "from-neon-red to-primary"
+      gradient: "from-neon-violet to-primary"
     },
     {
       icon: BarChart3,
       title: "Analytics", 
       description: "Comprehensive wallet analysis, whale tracking, and market intelligence insights.",
-      gradient: "from-neon-yellow to-secondary"
+      gradient: "from-neon-blue to-secondary"
     },
     {
       icon: Bot,
       title: "AI Automation",
       description: "Intelligent airdrop hunting, automated trading alerts, and portfolio optimization.",
-      gradient: "from-neon-green to-primary-glow"
+      gradient: "from-neon-purple to-neon-cyan"
     }
   ];
 
@@ -45,23 +45,24 @@ export const About = () => {
           {features.map((feature, index) => (
             <Card 
               key={feature.title}
-              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-border/50"
+              className="group hover:shadow-purple transition-all duration-500 hover:-translate-y-3 border-primary/30 bg-card/50 backdrop-blur-md futuristic-border animate-slide-up"
               style={{
                 animationDelay: `${index * 200}ms`
               }}
             >
               <CardHeader className="text-center">
                 <div className="mx-auto mb-4 relative">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${feature.gradient} p-4 group-hover:shadow-neon transition-all duration-300`}>
-                    <feature.icon className="w-full h-full text-white" />
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${feature.gradient} p-4 group-hover:shadow-neon group-hover:scale-110 transition-all duration-500 electric-pulse`}>
+                    <feature.icon className="w-full h-full text-background" />
                   </div>
+                  <div className="absolute inset-0 bg-gradient-electric opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
                 </div>
-                <CardTitle className="text-2xl font-bold text-foreground">
+                <CardTitle className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-center text-muted-foreground text-base leading-relaxed">
+                <CardDescription className="text-center text-muted-foreground text-base leading-relaxed group-hover:text-foreground transition-colors duration-300">
                   {feature.description}
                 </CardDescription>
               </CardContent>
