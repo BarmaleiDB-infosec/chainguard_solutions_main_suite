@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Zap, TrendingUp } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import heroBackground from "@/assets/hero-background.jpg";
 
 /**
  * Hero Section Component for ChainGuard
@@ -11,7 +12,15 @@ export const Hero = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   return (
-    <section className="min-h-screen bg-gradient-hero flex items-center justify-center px-4 relative overflow-hidden">
+    <section 
+      className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${heroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       {/* Scroll Progress Bar */}
       <div className="scroll-progress w-0" id="scroll-progress"></div>
       

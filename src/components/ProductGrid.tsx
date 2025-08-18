@@ -14,56 +14,78 @@ export const ProductGrid = () => {
   const products = [
     {
       id: 1,
-      title: t('product.smartContracts.title'),
-      description: t('product.smartContracts.description'),
-      price: "€3",
-      category: "Security",
-      buttonText: t('product.smartContracts.button'),
-      buttonUrl: "https://barmacrpt.gumroad.com/l/mrhvgn",
-      isPremium: false,
-      isFree: false
-    },
-    {
-      id: 2,
-      title: t('product.whaleTracker.title'),
-      description: t('product.whaleTracker.description'),
-      price: "€9.99",
-      category: "Analytics",
-      buttonText: t('product.whaleTracker.button'),
-      buttonUrl: "https://barmacrpt.gumroad.com/l/ljrgk",
-      isPremium: false,
-      isFree: false
-    },
-    {
-      id: 3,
-      title: t('product.airdropEligibility.title'),
-      description: t('product.airdropEligibility.description'),
-      price: "€5",
-      category: "Analytics",
-      buttonText: t('product.airdropEligibility.button'),
-      buttonUrl: "https://barmacrpt.gumroad.com/l/jvgauo",
-      isPremium: false,
-      isFree: false
-    },
-    {
-      id: 4,
-      title: t('product.defiSafety.title'),
-      description: t('product.defiSafety.description'),
+      title: "DeFi Safety Snapshot",
+      description: "90-second rug check with comprehensive templates and real case studies.",
       price: "€9.99",
       category: "Security",
-      buttonText: t('product.defiSafety.button'),
+      buttonText: "Buy PDF Guide",
       buttonUrl: "https://barmacrpt.gumroad.com/l/ounhfv",
       isPremium: false,
       isFree: false
     },
     {
+      id: 2,
+      title: "Anti-Sybil Toolkit",
+      description: "Advanced sybil pattern detection and randomization tools for airdrop protection.",
+      price: "€19.99",
+      category: "Security",
+      buttonText: "Buy PDF Guide",
+      buttonUrl: "https://barmacrpt.gumroad.com/l/antisybil",
+      isPremium: false,
+      isFree: false
+    },
+    {
+      id: 3,
+      title: "Slither-Powered Audit",
+      description: "Professional smart contract audit service powered by Slither analysis engine.",
+      price: "€49.99",
+      category: "Security",
+      buttonText: "Order Service",
+      buttonUrl: "https://barmacrpt.gumroad.com/l/slither",
+      isPremium: true,
+      isFree: false
+    },
+    {
+      id: 4,
+      title: "Airdrop Sector Intel",
+      description: "Weekly updated intelligence report with whale maps and strategic drop tracking.",
+      price: "€24.99",
+      category: "Analytics",
+      buttonText: "Buy PDF Guide",
+      buttonUrl: "https://barmacrpt.gumroad.com/l/ljrgk",
+      isPremium: false,
+      isFree: false
+    },
+    {
       id: 5,
-      title: t('product.airscout.title'),
-      description: t('product.airscout.description'),
+      title: "Smart Contracts Audit Manual",
+      description: "Comprehensive PDF guide for smart contract security auditing and vulnerability detection.",
+      price: "€19.99",
+      category: "Security", 
+      buttonText: "Buy PDF Guide",
+      buttonUrl: "https://barmacrpt.gumroad.com/l/mrhvgn",
+      isPremium: false,
+      isFree: false
+    },
+    {
+      id: 6,
+      title: "Airdrop Eligibility Manual",
+      description: "Automated wallet eligibility scoring PDF guide for qualification assessment.",
+      price: "€14.99",
+      category: "Analytics",
+      buttonText: "Buy PDF Guide", 
+      buttonUrl: "https://barmacrpt.gumroad.com/l/jvgauo",
+      isPremium: false,
+      isFree: false
+    },
+    {
+      id: 7,
+      title: "AirScout",
+      description: "AI-driven niche analysis web tool with real-time alerts for emerging opportunities.",
       price: t('freemium'),
       category: "AI",
-      buttonText: t('product.airscout.button'),
-      buttonUrl: "#",
+      buttonText: "Try Web Tool",
+      buttonUrl: "/airscout",
       isPremium: true,
       isFree: false
     }

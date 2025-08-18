@@ -1,6 +1,8 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { TechSection } from "@/components/TechSection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
@@ -25,8 +27,18 @@ const Index = () => {
           <About />
         </AnimatedSection>
         
-        {/* Featured Products Preview */}
+        {/* Technology Section */}
+        <AnimatedSection delay={300}>
+          <TechSection />
+        </AnimatedSection>
+        
+        {/* Services Section */}
         <AnimatedSection delay={400}>
+          <ServicesSection />
+        </AnimatedSection>
+        
+        {/* Featured Products Preview */}
+        <AnimatedSection delay={500}>
           <section className="py-16 px-4 bg-gradient-subtle/20">
             <div className="container mx-auto max-w-4xl text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">

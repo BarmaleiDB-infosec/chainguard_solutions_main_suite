@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, BarChart3, Bot, Zap } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import aboutGuardian from "@/assets/about-guardian.jpg";
 
 /**
  * About Section Component
@@ -30,8 +31,19 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 bg-background">
-      <div className="container mx-auto max-w-6xl">
+    <section id="about" className="py-24 px-4 bg-background relative">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `url(${aboutGuardian})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      ></div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             {t('about.title')}
