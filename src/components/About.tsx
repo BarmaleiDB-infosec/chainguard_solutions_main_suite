@@ -36,7 +36,7 @@ export const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             {t('about.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             {t('about.description')}
           </p>
         </div>
@@ -77,7 +77,7 @@ export const About = () => {
               <Zap className="h-8 w-8 text-primary" />
               <h3 className="text-2xl font-bold text-foreground">{t('about.mission.title')}</h3>
             </div>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-foreground/80 text-lg leading-relaxed">
               {t('about.mission.description')}
             </p>
           </div>
@@ -87,7 +87,7 @@ export const About = () => {
               <Shield className="h-8 w-8 text-secondary" />
               <h3 className="text-2xl font-bold text-foreground">{t('about.vision.title')}</h3>
             </div>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-foreground/80 text-lg leading-relaxed">
               {t('about.vision.description')}
             </p>
           </div>

@@ -8,28 +8,28 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* ChainGuard Futuristic Design System - Purple/Blue/Black/White Only */
-    --background: 0 0% 6%; /* Deep black */
-    --foreground: 0 0% 98%; /* Pure white - High contrast for text */
+    /* ChainGuard Futuristic Design System - High Contrast Purple/Blue/Black/White */
+    --background: 0 0% 3%; /* Deep black */
+    --foreground: 0 0% 100%; /* Pure white - Maximum contrast */
 
-    --card: 240 15% 8%; /* Dark blue-black */
-    --card-foreground: 0 0% 95%;
+    --card: 240 20% 6%; /* Dark blue-black */
+    --card-foreground: 0 0% 98%; /* High contrast white */
 
-    --popover: 240 15% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 240 20% 6%;
+    --popover-foreground: 0 0% 98%;
 
     /* Primary: Electric Violet */
-    --primary: 258 100% 65%; /* Bright electric violet */
-    --primary-foreground: 0 0% 0%;
+    --primary: 258 100% 70%; /* Bright electric violet */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
     --primary-glow: 258 100% 75%;
 
     /* Secondary: Electric Blue */
-    --secondary: 220 100% 55%; /* Electric blue */
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 220 100% 60%; /* Electric blue */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
 
     /* Muted: Dark Blue */
-    --muted: 240 20% 12%;
-    --muted-foreground: 220 15% 85%; /* Increased contrast for better readability */
+    --muted: 240 25% 8%;
+    --muted-foreground: 0 0% 90%; /* High contrast for muted text */
 
     /* Accent: Neon Purple */
     --accent: 275 100% 60%;
@@ -143,30 +143,32 @@ All colors MUST be HSL.
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Smooth Neon Animations - Less Flashing */
-  @keyframes neon-glow {
+  /* Smooth Flowing Neon Animations - No Flashing */
+  @keyframes neon-flow {
     0%, 100% { 
-      box-shadow: 0 0 8px hsl(var(--primary) / 0.4), 0 0 16px hsl(var(--primary) / 0.2);
-      transform: scale(1);
+      box-shadow: 0 0 10px hsl(var(--primary) / 0.3), 0 0 20px hsl(var(--primary) / 0.1);
     }
     50% { 
-      box-shadow: 0 0 16px hsl(var(--primary) / 0.6), 0 0 24px hsl(var(--primary) / 0.3);
-      transform: scale(1.01);
+      box-shadow: 0 0 15px hsl(var(--primary) / 0.4), 0 0 25px hsl(var(--primary) / 0.2);
     }
   }
 
   @keyframes electric-flow {
-    0%, 100% { 
-      box-shadow: 0 0 12px hsl(var(--secondary) / 0.5), 0 0 20px hsl(var(--secondary) / 0.3);
-      border-color: hsl(var(--secondary) / 0.4);
+    0% { 
+      box-shadow: 0 0 8px hsl(var(--primary) / 0.3), 0 0 16px hsl(var(--primary) / 0.1);
+      border-color: hsl(var(--primary) / 0.3);
     }
     33% { 
-      box-shadow: 0 0 16px hsl(var(--accent) / 0.6), 0 0 24px hsl(var(--accent) / 0.3);
-      border-color: hsl(var(--accent) / 0.5);
+      box-shadow: 0 0 10px hsl(var(--secondary) / 0.4), 0 0 18px hsl(var(--secondary) / 0.2);
+      border-color: hsl(var(--secondary) / 0.4);
     }
     66% { 
-      box-shadow: 0 0 14px hsl(var(--primary) / 0.5), 0 0 22px hsl(var(--primary) / 0.3);
-      border-color: hsl(var(--primary) / 0.4);
+      box-shadow: 0 0 12px hsl(var(--accent) / 0.4), 0 0 20px hsl(var(--accent) / 0.2);
+      border-color: hsl(var(--accent) / 0.4);
+    }
+    100% { 
+      box-shadow: 0 0 8px hsl(var(--primary) / 0.3), 0 0 16px hsl(var(--primary) / 0.1);
+      border-color: hsl(var(--primary) / 0.3);
     }
   }
 
@@ -190,11 +192,11 @@ All colors MUST be HSL.
   }
 
   .neon-pulse {
-    animation: neon-glow 3s ease-in-out infinite;
+    animation: neon-flow 4s ease-in-out infinite;
   }
 
   .electric-pulse {
-    animation: electric-flow 4s ease-in-out infinite;
+    animation: electric-flow 6s ease-in-out infinite;
   }
 
   .slide-in-glow {

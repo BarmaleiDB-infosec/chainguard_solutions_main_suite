@@ -41,11 +41,11 @@ export const Hero = () => {
           {t('hero.title')}
         </h1>
         
-        <h2 className="text-2xl md:text-3xl text-secondary font-semibold mb-4">
+        <h2 className="text-2xl md:text-3xl text-foreground font-semibold mb-4">
           {t('hero.subtitle')}
         </h2>
 
-        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
           {t('hero.description')}
         </p>
 
@@ -72,16 +72,16 @@ export const Hero = () => {
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-16 text-muted-foreground">
-          <p className="text-sm mb-4">{t('hero.trusted')}</p>
-          <div className="flex justify-center items-center space-x-8 opacity-70">
-            <div className="text-2xl font-bold text-secondary">500K+</div>
-            <div className="text-muted-foreground/50">|</div>
-            <div className="text-2xl font-bold text-secondary">150+</div>
-            <div className="text-muted-foreground/50">|</div>
-            <div className="text-2xl font-bold text-secondary">99.9%</div>
+        <div className="mt-16 text-foreground/70">
+          <p className="text-sm mb-4 text-foreground/80">{t('hero.trusted')}</p>
+          <div className="flex justify-center items-center space-x-8">
+            <div className="text-2xl font-bold text-primary">500K+</div>
+            <div className="text-foreground/30">|</div>
+            <div className="text-2xl font-bold text-primary">150+</div>
+            <div className="text-foreground/30">|</div>
+            <div className="text-2xl font-bold text-primary">99.9%</div>
           </div>
-          <div className="flex justify-center items-center space-x-8 text-xs mt-2">
+          <div className="flex justify-center items-center space-x-8 text-xs mt-2 text-foreground/60">
             <div>{t('hero.transactions')}</div>
             <div></div>
             <div>{t('hero.countries')}</div>
