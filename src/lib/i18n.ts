@@ -61,6 +61,15 @@ const resources = {
       "about.vision.title": "Our Vision", 
       "about.vision.description": "We envision ChainGuard as the ultimate shield of Web3 within the next 5–10 years, serving as a protector, navigator, and innovator.",
       
+      // Additional sections
+      "tech.title": "Our Technology Stack",
+      "tech.description": "Cutting-edge blockchain security infrastructure powered by advanced AI and machine learning",
+      "services.title": "Products & Services",
+      "services.description": "Comprehensive Web3 security and analytics solutions designed to protect and empower your digital assets",
+      "cta.title": "Ready to Secure Your Web3 Journey?",
+      "cta.description": "Join thousands of Web3 enthusiasts who trust ChainGuard to protect their digital assets and maximize opportunities.",
+      "cta.button": "Explore Our Arsenal",
+      
       // Common
       "free": "Free",
       "freemium": "Freemium",
@@ -125,6 +134,15 @@ const resources = {
       "about.mission.description": "В ChainGuard наша миссия — сделать блокчейн безопасным, прозрачным и доступным для всех. Мы считаем, что безопасность должна быть не роскошью, а универсальным правом в децентрализованной экосистеме.",
       "about.vision.title": "Наше видение",
       "about.vision.description": "Мы видим ChainGuard как конечный щит Web3 в ближайшие 5–10 лет, служащий защитником, навигатором и инноватором.",
+      
+      // Additional sections
+      "tech.title": "Наш технологический стек",
+      "tech.description": "Передовая инфраструктура безопасности блокчейна, основанная на продвинутом ИИ и машинном обучении",
+      "services.title": "Продукты и сервисы",
+      "services.description": "Комплексные решения безопасности и аналитики Web3, предназначенные для защиты и расширения возможностей ваших цифровых активов",
+      "cta.title": "Готовы защитить свой путь в Web3?",
+      "cta.description": "Присоединяйтесь к тысячам энтузиастов Web3, которые доверяют ChainGuard защиту своих цифровых активов и максимизацию возможностей.",
+      "cta.button": "Исследовать арсенал",
       
       // Common
       "free": "Бесплатно",

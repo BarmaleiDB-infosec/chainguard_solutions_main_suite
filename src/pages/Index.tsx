@@ -7,12 +7,14 @@ import { ProductGrid } from "@/components/ProductGrid";
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
 import { ScrollVisualization, AnimatedSection } from "@/components/ScrollVisualization";
+import { useTranslation } from "react-i18next";
 
 /**
  * ChainGuard Homepage - Web3 Security Platform
  * Features hero section, product showcase, and company information
  */
 const Index = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <ScrollVisualization />
@@ -42,10 +44,10 @@ const Index = () => {
           <section className="py-16 px-4 bg-gradient-subtle/20">
             <div className="container mx-auto max-w-4xl text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                Ready to Secure Your Web3 Journey?
+                {t('cta.title')}
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join thousands of Web3 enthusiasts who trust ChainGuard to protect their digital assets and maximize opportunities.
+                {t('cta.description')}
               </p>
               <Button 
                 variant="hero" 
@@ -53,7 +55,7 @@ const Index = () => {
                 className="neon-pulse subtle-glow"
               >
                 <Rocket className="mr-2 h-5 w-5" />
-                Explore Our Arsenal
+                {t('cta.button')}
               </Button>
             </div>
           </section>

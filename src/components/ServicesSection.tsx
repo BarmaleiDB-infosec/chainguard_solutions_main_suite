@@ -49,10 +49,10 @@ export const ServicesSection = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Products & Services
+            {t('services.title')}
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Comprehensive Web3 security and analytics solutions designed to protect and empower your digital assets
+            {t('services.description')}
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export const ServicesSection = () => {
             className="bg-gradient-electric border-none text-background font-bold hover:scale-105 transition-transform electric-pulse"
           >
             <Zap className="mr-2 h-5 w-5" />
-            Explore All Products
+            {t('cta.button')}
           </Button>
         </div>
       </div>
