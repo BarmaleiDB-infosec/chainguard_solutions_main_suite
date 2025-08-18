@@ -36,8 +36,8 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Main heading with gradient text */}
-        <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-neon bg-clip-text text-transparent neon-pulse">
+        {/* Main heading with high contrast gradient text */}
+        <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white drop-shadow-[0_0_20px_rgba(147,51,234,0.8)] neon-pulse">
           {t('hero.title')}
         </h1>
         
