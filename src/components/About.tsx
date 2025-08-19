@@ -83,7 +83,7 @@ export const About = () => {
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-12 animate-fade-in">
+        <div id="mission" className="grid md:grid-cols-2 gap-12 animate-fade-in">
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <Zap className="h-8 w-8 text-primary" />

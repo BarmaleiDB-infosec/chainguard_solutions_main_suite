@@ -53,6 +53,9 @@ const Index = () => {
                 variant="hero" 
                 size="lg"
                 className="neon-pulse subtle-glow"
+                onClick={() => {
+                  document.querySelector('.product-grid')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 <Rocket className="mr-2 h-5 w-5" />
                 {t('cta.button')}
@@ -85,18 +88,68 @@ const Index = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-4">Products</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Security Tools</li>
-                <li>Analytics Suite</li>
-                <li>AI Automation</li>
-                <li>Enterprise Solutions</li>
+                <li>
+                  <a 
+                    href="/products" 
+                    className="hover:text-primary transition-colors cursor-pointer"
+                  >
+                    Security Tools
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/products" 
+                    className="hover:text-primary transition-colors cursor-pointer"
+                  >
+                    Analytics Suite
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/products" 
+                    className="hover:text-primary transition-colors cursor-pointer"
+                  >
+                    AI Automation
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/products" 
+                    className="hover:text-primary transition-colors cursor-pointer"
+                  >
+                    Enterprise Solutions
+                  </a>
+                </li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-semibold text-foreground mb-4">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>About Us</li>
-                <li>Mission & Vision</li>
+                <li>
+                  <a 
+                    href="#about" 
+                    className="hover:text-primary transition-colors cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#mission" 
+                    className="hover:text-primary transition-colors cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector('#mission')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Mission & Vision
+                  </a>
+                </li>
                 <li>
                   <a 
                     href="mailto:contact@chainguard.ai" 

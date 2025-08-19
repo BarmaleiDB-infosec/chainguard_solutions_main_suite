@@ -78,7 +78,7 @@ export const ProductGrid = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-muted/30">
+    <section className="product-grid py-24 px-4 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
