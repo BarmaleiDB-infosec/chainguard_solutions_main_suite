@@ -97,8 +97,24 @@ const Index = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li>About Us</li>
                 <li>Mission & Vision</li>
-                <li>Contact</li>
-                <li>Support</li>
+                <li>
+                  <a 
+                    href="mailto:contact@chainguard.ai" 
+                    className="hover:text-primary transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://t.me/chainguard_assistant_bot" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Support Bot
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

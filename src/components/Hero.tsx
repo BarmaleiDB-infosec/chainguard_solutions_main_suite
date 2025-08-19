@@ -45,9 +45,9 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Main heading with high contrast gradient text */}
-        <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white drop-shadow-[0_0_20px_rgba(147,51,234,0.8)] neon-pulse">
-          {t('hero.title')}
+        {/* Main heading with high contrast gradient text - Centered in frame */}
+        <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white drop-shadow-[0_0_20px_rgba(147,51,234,0.8)] neon-pulse text-center">
+          ChainGuard
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-foreground font-semibold mb-4">
@@ -63,6 +63,7 @@ export const Hero = () => {
           <Button 
             variant="hero" 
             size="lg"
+            onClick={() => navigate('/auth')}
             className="min-w-[200px] electric-pulse subtle-glow bg-gradient-electric border-none text-background font-bold"
           >
             <Zap className="mr-2 h-5 w-5" />

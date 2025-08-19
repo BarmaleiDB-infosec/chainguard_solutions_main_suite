@@ -70,6 +70,10 @@ const resources = {
       "cta.description": "Join thousands of Web3 enthusiasts who trust ChainGuard to protect their digital assets and maximize opportunities.",
       "cta.button": "Explore Our Arsenal",
       
+      // Authentication
+      "auth.signIn": "Sign In",
+      "auth.signUp": "Sign Up",
+      
       // Common
       "free": "Free",
       "freemium": "Freemium",
@@ -143,6 +147,10 @@ const resources = {
       "cta.title": "Готовы защитить свой путь в Web3?",
       "cta.description": "Присоединяйтесь к тысячам энтузиастов Web3, которые доверяют ChainGuard защиту своих цифровых активов и максимизацию возможностей.",
       "cta.button": "Исследовать арсенал",
+      
+      // Authentication
+      "auth.signIn": "Войти",
+      "auth.signUp": "Регистрация",
       
       // Common
       "free": "Бесплатно",

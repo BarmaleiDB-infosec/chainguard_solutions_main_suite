@@ -14,80 +14,52 @@ export const ProductGrid = () => {
   const products = [
     {
       id: 1,
-      title: "DeFi Safety Snapshot",
-      description: "90-second rug check with comprehensive templates and real case studies.",
-      price: "€9.99",
+      title: "Smart Contract Audit",
+      description: "Get a professional review of smart contracts for critical vulnerabilities, logic bugs, and economicks.",
+      price: "$299",
       category: "Security",
       buttonText: "Buy PDF Guide",
-      buttonUrl: "https://barmacrpt.gumroad.com/l/ounhfv",
-      isPremium: false,
-      isFree: false
+      buttonUrl: "https://barmacrpt.gumroad.com/l/mrhvgn",
+      isPremium: true,
+      isFree: false,
+      includes: ["Security analysis of smart contracts", "Report with findings and recommendation", "Re-check after fixes"]
     },
     {
       id: 2,
-      title: "Anti-Sybil Toolkit",
-      description: "Advanced sybil pattern detection and randomization tools for airdrop protection.",
-      price: "€19.99",
-      category: "Security",
-      buttonText: "Buy PDF Guide",
-      buttonUrl: "https://barmacrpt.gumroad.com/l/antisybil",
-      isPremium: false,
-      isFree: false
-    },
-    {
-      id: 3,
-      title: "Slither-Powered Audit",
-      description: "Professional smart contract audit service powered by Slither analysis engine.",
-      price: "€49.99",
-      category: "Security",
-      buttonText: "Order Service",
-      buttonUrl: "https://barmacrpt.gumroad.com/l/slither",
-      isPremium: true,
-      isFree: false
-    },
-    {
-      id: 4,
-      title: "Airdrop Sector Intel",
-      description: "Weekly updated intelligence report with whale maps and strategic drop tracking.",
-      price: "€24.99",
+      title: "Whale Tracking & Sector Intel",
+      description: "Track whale movements and sector rotation insights with advanced analytics tools including Arkham, Dune, and Spotchain.",
+      price: "$99",
       category: "Analytics",
       buttonText: "Buy PDF Guide",
       buttonUrl: "https://barmacrpt.gumroad.com/l/ljrgk",
       isPremium: false,
-      isFree: false
+      isFree: false,
+      tools: ["ARKHAM", "DUNE", "SPOTCHAIN"]
     },
     {
-      id: 5,
-      title: "Smart Contracts Audit Manual",
-      description: "Comprehensive PDF guide for smart contract security auditing and vulnerability detection.",
-      price: "€19.99",
-      category: "Security", 
-      buttonText: "Buy PDF Guide",
-      buttonUrl: "https://barmacrpt.gumroad.com/l/mrhvgn",
-      isPremium: false,
-      isFree: false
-    },
-    {
-      id: 6,
-      title: "Airdrop Eligibility Manual",
-      description: "Automated wallet eligibility scoring PDF guide for qualification assessment.",
-      price: "€14.99",
+      id: 3,
+      title: "Airdrop Eligibility Guide",
+      description: "Track eligibility faster using advanced tools and analytics platforms for maximum airdrop opportunities.",
+      price: "$49",
       category: "Analytics",
-      buttonText: "Buy PDF Guide", 
+      buttonText: "Buy PDF Guide",
       buttonUrl: "https://barmacrpt.gumroad.com/l/jvgauo",
       isPremium: false,
-      isFree: false
+      isFree: false,
+      networks: ["zkSync", "LayerZo", "Starknet"],
+      tools: ["ARKHAM", "LAYER3 DEBANK"]
     },
     {
-      id: 7,
-      title: "AirScout",
-      description: "AI-driven niche analysis web tool with real-time alerts for emerging opportunities.",
-      price: t('freemium'),
-      category: "AI",
-      buttonText: "Try Web Tool",
-      buttonUrl: "/airscout",
-      isPremium: true,
-      isFree: false
+      id: 4,
+      title: "DeFi Safety Snapshot",
+      description: "12 risk indicators with 90-second rug check system. Complete PDF template and case studies included.",
+      price: "$9.99",
+      category: "Security",
+      buttonText: "Buy PDF Guide",
+      buttonUrl: "https://barmacrpt.gumroad.com/l/ounhfv",
+      isPremium: false,
+      isFree: false,
+      features: ["12 RISK INDICATORS", "90-SEC RUG CHECK", "PDF TEMPLATE + CASE STUDIES"]
     }
   ];
 
