@@ -1,73 +1,75 @@
-# Welcome to your Lovable project
 
-## Project info
+🌐 ChainGuard
 
-**URL**: https://lovable.dev/projects/c7fbeffa-e4c7-4965-b99b-fd2b2935cf38
+ChainGuard is a cutting-edge project in the field of crypto-intelligence and Web3 security tools.
+Our mission is to bring clarity, safety, and automation into blockchain analytics.
 
-## How can I edit this code?
+Built with React + TypeScript + Vite, powered by TailwindCSS and shadcn-ui, the platform is fast, responsive, and developer-friendly.
 
-There are several ways of editing your application.
+🚀 Features
 
-**Use Lovable**
+✅ Lightning-fast development with Vite
+✅ Clean and modern UI/UX with Tailwind + shadcn-ui
+✅ Strongly typed TypeScript architecture
+✅ Easy to extend and customize
+✅ Deploy-ready for Vercel / Netlify / GitHub Pages
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c7fbeffa-e4c7-4965-b99b-fd2b2935cf38) and start prompting.
+🛠 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+⚡ Vite — blazing fast build & dev server
 
-**Use your preferred IDE**
+⚛️ React — component-based frontend
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🟦 TypeScript — type safety for scalability
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🎨 Tailwind CSS — utility-first styling
 
-Follow these steps:
+🧩 shadcn-ui — accessible UI components
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+📦 Installation & Setup
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Clone the repository:
 
-# Step 3: Install the necessary dependencies.
-npm i
+git clone <YOUR_REPO_URL>
+cd chainguard
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+
+Install dependencies:
+
+npm install
+
+
+Run the development server:
+
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+🌍 Deployment
+Easily deploy using:
+Vercel
+Netlify
+GitHub Pages
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📸 Screenshots
+<img width="1275" height="770" alt="image" src="https://github.com/user-attachments/assets/6320d4bf-0298-4ca4-8192-9256e9fb4ac9" />
+<img width="1219" height="753" alt="image" src="https://github.com/user-attachments/assets/ca882104-5b0b-4e5c-9056-3766ad10a187" />
+<img width="1241" height="814" alt="image" src="https://github.com/user-attachments/assets/38e5a758-87cc-4878-84c4-034a9a4ec158" />
 
-## What technologies are used for this project?
 
-This project is built with:
+🛤 Roadmap
+ MVP release of ChainGuard platform
+ Integration with Web3 APIs
+ Advanced analytics dashboards
+ Telegram bot delivery system
+ SaaS subscription model
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🤝 Contributing
+We welcome contributions! 🚀
+Feel free to fork this repo, submit issues, or open pull requests.
 
-## How can I deploy this project?
+📬 Contact
+@chainguard_assistant_bot
 
-Simply open [Lovable](https://lovable.dev/projects/c7fbeffa-e4c7-4965-b99b-fd2b2935cf38) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+📄 License
+Distributed under your custom license.
