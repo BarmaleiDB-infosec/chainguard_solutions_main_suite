@@ -50,8 +50,8 @@ const resources = {
       "product.defiSafety.button": "Buy PDF Guide",
       
       "product.airscout.title": "AirScout",
-      "product.airscout.description": "AI-driven niche analysis web tool with real-time alerts for emerging opportunities and threats.",
-      "product.airscout.button": "Try Web Tool",
+      "product.airscout.description": "Intelligent SaaS platform for real-time monitoring, analysis and alerts on news, tools and innovations in selected niches with AI analytics and smart notifications.",
+      "product.airscout.button": "Subscribe $15/month",
       
       // About
       "about.title": "Who We Are",
@@ -73,6 +73,21 @@ const resources = {
       // Authentication
       "auth.signIn": "Sign In",
       "auth.signUp": "Sign Up",
+      
+      // Contact
+      "contact.button": "Contact Us",
+      "contact.support": "Support",
+      
+      // Footer
+      "footer.products": "Products",
+      "footer.company": "Company",
+      "footer.support": "Support",
+      "footer.securityTools": "Security Tools",
+      "footer.analyticsSuite": "Analytics Suite",
+      "footer.aiAutomation": "AI Automation",
+      "footer.enterpriseSolutions": "Enterprise Solutions",
+      "footer.aboutUs": "About Us",
+      "footer.missionVision": "Mission & Vision",
       
       // Common
       "free": "Free",
@@ -128,8 +143,23 @@ const resources = {
       "product.defiSafety.button": "Купить PDF руководство",
       
       "product.airscout.title": "AirScout",
-      "product.airscout.description": "Веб-инструмент с ИИ-анализом ниш и оповещениями в реальном времени о новых возможностях и угрозах.",
-      "product.airscout.button": "Попробовать веб-инструмент",
+      "product.airscout.description": "Интеллектуальная SaaS-платформа для мониторинга, анализа и уведомлений в реальном времени о новостях, инструментах и инновациях в выбранных нишах с ИИ-аналитикой и умными уведомлениями.",
+      "product.airscout.button": "Подписаться $15/месяц",
+      
+      // Contact
+      "contact.button": "Связаться с нами",
+      "contact.support": "Поддержка",
+      
+      // Footer
+      "footer.products": "Продукты",
+      "footer.company": "Компания",
+      "footer.support": "Поддержка",
+      "footer.securityTools": "Инструменты безопасности",
+      "footer.analyticsSuite": "Набор аналитики",
+      "footer.aiAutomation": "ИИ автоматизация",
+      "footer.enterpriseSolutions": "Корпоративные решения",
+      "footer.aboutUs": "О нас",
+      "footer.missionVision": "Миссия и видение",
       
       // About
       "about.title": "Кто мы",

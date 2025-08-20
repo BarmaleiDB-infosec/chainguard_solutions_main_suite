@@ -60,6 +60,18 @@ export const ProductGrid = () => {
       isPremium: false,
       isFree: false,
       features: ["12 RISK INDICATORS", "90-SEC RUG CHECK", "PDF TEMPLATE + CASE STUDIES"]
+    },
+    {
+      id: 5,
+      title: t('product.airscout.title'),
+      description: t('product.airscout.description'),
+      price: "$15/month",
+      category: "AI",
+      buttonText: t('product.airscout.button'),
+      buttonUrl: "https://payeer.com/airscout-payment",
+      isPremium: true,
+      isFree: false,
+      features: ["REAL-TIME MONITORING", "AI ANALYTICS", "SMART NOTIFICATIONS", "MULTI-NICHE SUPPORT"]
     }
   ];
 

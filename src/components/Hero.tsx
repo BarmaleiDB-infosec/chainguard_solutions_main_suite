@@ -34,14 +34,17 @@ export const Hero = () => {
         </div>
 
       <div className="text-center z-10 max-w-4xl mx-auto animate-fade-in">
-        {/* Logo with subtle neon glow effect */}
+        {/* Logo with iridescent neon glow effect */}
         <div className="mb-8 flex justify-center">
           <div className="relative">
             <Shield 
               size={80} 
-              className="text-secondary subtle-glow transition-all duration-1500" 
+              className="text-primary drop-shadow-[0_0_30px_rgba(147,51,234,0.8)] transition-all duration-1500 animate-pulse" 
+              style={{
+                filter: 'drop-shadow(0 0 15px hsl(258 100% 70%)) drop-shadow(0 0 25px hsl(220 100% 65%)) drop-shadow(0 0 35px hsl(275 100% 65%))',
+                animation: 'electric-flow 3s ease-in-out infinite'
+              }}
             />
-            <div className="absolute inset-0 bg-gradient-violet-gold opacity-10 rounded-full blur-lg"></div>
           </div>
         </div>
 

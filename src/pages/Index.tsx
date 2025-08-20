@@ -86,14 +86,14 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Products</h4>
+              <h4 className="font-semibold text-foreground mb-4">{t('footer.products')}</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <a 
                     href="/products" 
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
-                    Security Tools
+                    {t('footer.securityTools')}
                   </a>
                 </li>
                 <li>
@@ -101,7 +101,7 @@ const Index = () => {
                     href="/products" 
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
-                    Analytics Suite
+                    {t('footer.analyticsSuite')}
                   </a>
                 </li>
                 <li>
@@ -109,7 +109,7 @@ const Index = () => {
                     href="/products" 
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
-                    AI Automation
+                    {t('footer.aiAutomation')}
                   </a>
                 </li>
                 <li>
@@ -117,7 +117,7 @@ const Index = () => {
                     href="/products" 
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
-                    Enterprise Solutions
+                    {t('footer.enterpriseSolutions')}
                   </a>
                 </li>
               </ul>
