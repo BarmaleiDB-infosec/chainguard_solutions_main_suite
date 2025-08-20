@@ -1,13 +1,14 @@
+import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
 import { TechSection } from "@/components/TechSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { ScrollVisualization } from "@/components/ScrollVisualization";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
 import { ProductGrid } from "@/components/ProductGrid";
-import { Button } from "@/components/ui/button";
-import { Rocket } from "lucide-react";
-import { ScrollVisualization, AnimatedSection } from "@/components/ScrollVisualization";
+import { Rocket, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { AnimatedSection } from "@/components/ScrollVisualization";
 
 /**
  * ChainGuard Homepage - Web3 Security Platform
@@ -39,32 +40,48 @@ const Index = () => {
           <ServicesSection />
         </AnimatedSection>
         
-        {/* Featured Products Preview */}
+        {/* Call to Action */}
         <AnimatedSection delay={500}>
-          <section className="py-16 px-4 bg-gradient-subtle/20">
-            <div className="container mx-auto max-w-4xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                {t('cta.title')}
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                {t('cta.description')}
-              </p>
-              <Button 
-                variant="hero" 
-                size="lg"
-                className="neon-pulse subtle-glow"
-                onClick={() => {
-                  document.querySelector('.product-grid')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                <Rocket className="mr-2 h-5 w-5" />
-                {t('cta.button')}
-              </Button>
+          <section className="py-24 px-4 bg-gradient-dark/20">
+            <div className="container mx-auto max-w-7xl px-4 pt-20 pb-12">
+              <div className="text-center mb-16 bg-gradient-dark p-12 rounded-xl border border-primary/20 shadow-elegant">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                  {t('cta.title')}
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                  {t('cta.description')}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    variant="hero" 
+                    size="lg"
+                    className="neon-pulse subtle-glow"
+                    onClick={() => {
+                      document.querySelector('.product-grid')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    <Rocket className="mr-2 h-5 w-5" />
+                    {t('cta.button')}
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-primary text-primary hover:bg-primary hover:text-background"
+                    onClick={() => {
+                      window.open('https://t.me/chainguard_support_bot', '_blank');
+                    }}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    {t('contact.button')}
+                  </Button>
+                </div>
+              </div>
             </div>
           </section>
         </AnimatedSection>
 
-        {/* Products Grid Preview */}
+        {/* Products Grid */}
         <AnimatedSection delay={600}>
           <ProductGrid />
         </AnimatedSection>
@@ -124,7 +141,7 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Company</h4>
+              <h4 className="font-semibold text-foreground mb-4">{t('footer.company')}</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <a 
@@ -135,7 +152,7 @@ const Index = () => {
                       document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    About Us
+                    {t('footer.aboutUs')}
                   </a>
                 </li>
                 <li>
@@ -147,25 +164,53 @@ const Index = () => {
                       document.querySelector('#mission')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    Mission & Vision
+                    {t('footer.missionVision')}
                   </a>
                 </li>
                 <li>
                   <a 
-                    href="mailto:contact@chainguard.ai" 
-                    className="hover:text-primary transition-colors"
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://t.me/chainguard_assistant_bot" 
-                    target="_blank" 
+                    href="https://t.me/chainguard_support_bot" 
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors"
                   >
-                    Support Bot
+                    {t('contact.support')}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">{t('footer.support')}</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>
+                  <a 
+                    href="https://t.me/chainguard_support_bot" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Help Center
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://t.me/chainguard_support_bot" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Technical Support
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://t.me/chainguard_support_bot" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Community
                   </a>
                 </li>
               </ul>
