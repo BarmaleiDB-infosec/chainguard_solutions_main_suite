@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import { sanitizeInput, validateEmail, validatePassword } from "@/utils/sanitize";
 
 /**
  * Authentication Page - Login and Signup
@@ -47,25 +48,40 @@ const Auth = () => {
     setIsLoading(true);
 
     try {
+      // Sanitize inputs
+      const sanitizedEmail = sanitizeInput(email);
+      const sanitizedPassword = sanitizeInput(password);
+
+      // Validate email
+      if (!validateEmail(sanitizedEmail)) {
+        throw new Error("Please enter a valid email address");
+      }
+
       if (isLogin) {
         const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
+          email: sanitizedEmail,
+          password: sanitizedPassword,
         });
         
         if (error) throw error;
         toast({
-          title: "Welcome back!",
-          description: "You have been successfully logged in.",
+          title: t('auth.welcome'),
+          description: t('auth.loginSuccess'),
         });
       } else {
-        if (password !== confirmPassword) {
-          throw new Error("Passwords do not match");
+        if (sanitizedPassword !== confirmPassword) {
+          throw new Error(t('auth.passwordMismatch'));
+        }
+
+        // Validate password strength
+        const passwordValidation = validatePassword(sanitizedPassword);
+        if (!passwordValidation.isValid) {
+          throw new Error(passwordValidation.message);
         }
 
         const { error } = await supabase.auth.signUp({
-          email,
-          password,
+          email: sanitizedEmail,
+          password: sanitizedPassword,
           options: {
             emailRedirectTo: `${window.location.origin}/`
           }
@@ -73,15 +89,15 @@ const Auth = () => {
         
         if (error) throw error;
         toast({
-          title: "Account created!",
-          description: "Please check your email to verify your account.",
+          title: t('auth.accountCreated'),
+          description: t('auth.verifyEmail'),
         });
       }
     } catch (error: any) {
       toast({
         variant: "destructive",
-        title: "Authentication Error",
-        description: error.message || "An error occurred during authentication.",
+        title: t('auth.error'),
+        description: error.message || t('auth.genericError'),
       });
     } finally {
       setIsLoading(false);

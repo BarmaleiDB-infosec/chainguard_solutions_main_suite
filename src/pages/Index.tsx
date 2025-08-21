@@ -9,6 +9,7 @@ import { ProductGrid } from "@/components/ProductGrid";
 import { Rocket, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { AnimatedSection } from "@/components/ScrollVisualization";
+import { FloatingElements, useSmoothScroll } from "@/components/SmoothScroll";
 
 /**
  * ChainGuard Homepage - Web3 Security Platform
@@ -16,9 +17,12 @@ import { AnimatedSection } from "@/components/ScrollVisualization";
  */
 const Index = () => {
   const { t } = useTranslation();
+  useSmoothScroll();
+  
   return (
     <div className="min-h-screen bg-background">
       <ScrollVisualization />
+      <FloatingElements />
       <Header />
       
       <main>
@@ -190,7 +194,7 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors"
                   >
-                    Help Center
+                    {t('contact.support')}
                   </a>
                 </li>
                 <li>

@@ -73,6 +73,13 @@ const resources = {
       // Authentication
       "auth.signIn": "Sign In",
       "auth.signUp": "Sign Up",
+      "auth.welcome": "Welcome back!",
+      "auth.loginSuccess": "You have been successfully logged in.",
+      "auth.accountCreated": "Account created!",
+      "auth.verifyEmail": "Please check your email to verify your account.",
+      "auth.error": "Authentication Error",
+      "auth.genericError": "An error occurred during authentication.",
+      "auth.passwordMismatch": "Passwords do not match",
       
       // Contact
       "contact.button": "Contact Us",
@@ -181,6 +188,13 @@ const resources = {
       // Authentication
       "auth.signIn": "Войти",
       "auth.signUp": "Регистрация",
+      "auth.welcome": "Добро пожаловать!",
+      "auth.loginSuccess": "Вы успешно вошли в систему.",
+      "auth.accountCreated": "Аккаунт создан!",
+      "auth.verifyEmail": "Проверьте вашу почту для подтверждения аккаунта.",
+      "auth.error": "Ошибка аутентификации",
+      "auth.genericError": "Произошла ошибка при аутентификации.",
+      "auth.passwordMismatch": "Пароли не совпадают",
       
       // Common
       "free": "Бесплатно",
