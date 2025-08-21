@@ -51,10 +51,10 @@ We offer rewards for valid security findings:
 
 | Severity | Reward Range |
 |----------|-------------|
-| Critical | $500 - $2,000 |
-| High     | $200 - $500  |
-| Medium   | $50 - $200   |
-| Low      | $25 - $50    |
+| Critical | $50 - $200 |
+| High     | $20 - $50  |
+| Medium   | $15 - $20   |
+| Low      | $5 - $150   |
 
 **Eligibility Requirements:**
 - First to report the vulnerability
