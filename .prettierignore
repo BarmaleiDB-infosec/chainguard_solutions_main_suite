@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+*.lock
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment files
+.env*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.generated.*
+public/manifest.json
+
+# Package managers
+yarn.lock
+package-lock.json
+bun.lockb
+
+# Logs
+*.log

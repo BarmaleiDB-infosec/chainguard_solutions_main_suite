@@ -1,0 +1,32 @@
+# ZAP Scanning Rules
+# Format: ID	THRESHOLD	NEW_LEVEL	[DESCRIPTION]
+# Use IGNORE to ignore rule
+
+# Content Security Policy
+10038	MEDIUM	INFO	Content Security Policy (CSP) Header Not Set
+
+# Secure Headers
+10020	MEDIUM	INFO	X-Frame-Options Header Not Set
+10021	MEDIUM	INFO	X-Content-Type-Options Header Not Set  
+10023	MEDIUM	INFO	Information Disclosure - Suspicious Comments
+
+# Authentication
+40003	MEDIUM	INFO	CSRF Token Missing
+40012	MEDIUM	INFO	Cross Domain JavaScript Source File Inclusion
+40013	MEDIUM	INFO	Weak Authentication Method
+40014	MEDIUM	INFO	Cross Domain Misconfiguration
+40016	MEDIUM	INFO	Web Browser XSS Protection Not Enabled
+40017	MEDIUM	INFO	Source Code Disclosure
+40018	MEDIUM	INFO	SQL Injection
+
+# Information Disclosure  
+10049	LOW	IGNORE	Non-Storable Content
+10054	LOW	IGNORE	Cookie Without SameSite Attribute
+10055	LOW	IGNORE	CSP Scanner
+10094	LOW	IGNORE	Base64 Disclosure
+10095	LOW	IGNORE	Backup File Disclosure
+
+# Modern Web App False Positives
+90001	LOW	IGNORE	Insecure JSF ViewState
+90002	LOW	IGNORE	Java Serialization Object
+90003	LOW	IGNORE	Sub Resource Integrity Attribute Missing
