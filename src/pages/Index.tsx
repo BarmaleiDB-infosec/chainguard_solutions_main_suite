@@ -10,6 +10,7 @@ import { Rocket, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { AnimatedSection } from "@/components/ScrollVisualization";
 import { FloatingElements, useSmoothScroll } from "@/components/SmoothScroll";
+import { EnhancedScrollProgress } from "@/components/animations/EnhancedScrollAnimations";
 
 /**
  * ChainGuard Homepage - Web3 Security Platform
@@ -21,7 +22,7 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-background">
-      <ScrollVisualization />
+      <EnhancedScrollProgress />
       <FloatingElements />
       <Header />
       
