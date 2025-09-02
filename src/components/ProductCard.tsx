@@ -1,8 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Download, Play } from "lucide-react";
+import { ExternalLink, Download, Play, Wallet } from "lucide-react";
 import { MagneticHover } from "@/components/animations/EnhancedScrollAnimations";
+import { CryptoPayment } from "@/components/crypto/CryptoPayment";
+import { useState } from "react";
 
 interface ProductCardProps {
   title: string;
@@ -13,6 +15,10 @@ interface ProductCardProps {
   buttonUrl?: string;
   isPremium?: boolean;
   isFree?: boolean;
+  enableCryptoPayment?: boolean;
+  priceUSD?: number;
+  walletAddress?: string;
+  onWalletRequired?: () => void;
 }
 
 /**
@@ -27,8 +33,13 @@ export const ProductCard = ({
   buttonText, 
   buttonUrl,
   isPremium = false,
-  isFree = false 
+  isFree = false,
+  enableCryptoPayment = false,
+  priceUSD = 0,
+  walletAddress,
+  onWalletRequired
 }: ProductCardProps) => {
+  const [showCryptoPayment, setShowCryptoPayment] = useState(false);
   const getCategoryColor = (cat: string) => {
     switch (cat.toLowerCase()) {
       case 'security': return 'bg-neon-violet/20 text-neon-violet border-neon-violet/30';
@@ -45,9 +56,20 @@ export const ProductCard = ({
   };
 
   const handleButtonClick = () => {
-    if (buttonUrl) {
+    if (enableCryptoPayment) {
+      if (!walletAddress) {
+        onWalletRequired?.();
+        return;
+      }
+      setShowCryptoPayment(true);
+    } else if (buttonUrl) {
       window.open(buttonUrl, '_blank', 'noopener,noreferrer');
     }
+  };
+
+  const handlePaymentSuccess = () => {
+    // Здесь можно добавить логику после успешной оплаты
+    console.log("Payment successful for:", title);
   };
 
   return (
@@ -115,11 +137,23 @@ export const ProductCard = ({
             onClick={handleButtonClick}
           >
             <span className="flex items-center">
-              {getButtonIcon()}
-              {buttonText}
+              {enableCryptoPayment ? <Wallet className="mr-2 h-4 w-4" /> : getButtonIcon()}
+              {enableCryptoPayment ? "Купить за крипту" : buttonText}
             </span>
           </Button>
         </CardContent>
+
+        {/* Модальное окно оплаты */}
+        {enableCryptoPayment && (
+          <CryptoPayment 
+            productTitle={title}
+            priceUSD={priceUSD}
+            isOpen={showCryptoPayment}
+            onClose={() => setShowCryptoPayment(false)}
+            onPaymentSuccess={handlePaymentSuccess}
+            walletAddress={walletAddress}
+          />
+        )}
       </Card>
     </MagneticHover>
   );

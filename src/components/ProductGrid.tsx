@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProductCard } from "./ProductCard";
+import { WalletConnect } from "./crypto/WalletConnect";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 
 /**
  * Product Grid Component
@@ -9,6 +11,7 @@ import { useTranslation } from "react-i18next";
  */
 export const ProductGrid = () => {
   const [activeTab, setActiveTab] = useState("all");
+  const [walletAddress, setWalletAddress] = useState<string>("");
   const { t } = useTranslation();
 
   const products = [
@@ -71,7 +74,22 @@ export const ProductGrid = () => {
       buttonUrl: "https://payeer.com/airscout-payment",
       isPremium: true,
       isFree: false,
+      enableCryptoPayment: true,
+      priceUSD: 15,
       features: ["REAL-TIME MONITORING", "AI ANALYTICS", "SMART NOTIFICATIONS", "MULTI-NICHE SUPPORT"]
+    },
+    {
+      id: 6,
+      title: "Ручной аудит",
+      description: "Профессиональный ручной аудит безопасности веб-сайтов или смарт-контрактов за $120. Получите детальный отчет с рекомендациями по устранению уязвимостей.",
+      price: "$120",
+      category: "Security",
+      buttonText: "Заказать аудит",
+      isPremium: true,
+      isFree: false,
+      enableCryptoPayment: true,
+      priceUSD: 120,
+      features: ["РУЧНАЯ ПРОВЕРКА", "ДЕТАЛЬНЫЙ ОТЧЕТ", "РЕКОМЕНДАЦИИ", "ПОДДЕРЖКА"]
     }
   ];
 
@@ -80,6 +98,14 @@ export const ProductGrid = () => {
     return products.filter(product => 
       product.category.toLowerCase() === category.toLowerCase()
     );
+  };
+
+  const handleWalletConnect = (address: string) => {
+    setWalletAddress(address);
+  };
+
+  const handleWalletRequired = () => {
+    toast.error("Подключите кошелек для совершения покупки");
   };
 
   const tabsData = [
@@ -96,9 +122,14 @@ export const ProductGrid = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             {t('products.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             {t('products.subtitle')}
           </p>
+          
+          {/* Компонент подключения кошелька */}
+          <div className="max-w-md mx-auto mb-8">
+            <WalletConnect onWalletConnect={handleWalletConnect} />
+          </div>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -135,6 +166,10 @@ export const ProductGrid = () => {
                       buttonUrl={product.buttonUrl}
                       isPremium={product.isPremium}
                       isFree={product.isFree}
+                      enableCryptoPayment={product.enableCryptoPayment}
+                      priceUSD={product.priceUSD}
+                      walletAddress={walletAddress}
+                      onWalletRequired={handleWalletRequired}
                     />
                   </div>
                 ))}
