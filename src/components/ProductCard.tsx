@@ -5,6 +5,7 @@ import { ExternalLink, Download, Play, Wallet } from "lucide-react";
 import { MagneticHover } from "@/components/animations/EnhancedScrollAnimations";
 import { CryptoPayment } from "@/components/crypto/CryptoPayment";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ProductCardProps {
   title: string;
@@ -40,6 +41,7 @@ export const ProductCard = ({
   onWalletRequired
 }: ProductCardProps) => {
   const [showCryptoPayment, setShowCryptoPayment] = useState(false);
+  const { t } = useTranslation();
   const getCategoryColor = (cat: string) => {
     switch (cat.toLowerCase()) {
       case 'security': return 'bg-neon-violet/20 text-neon-violet border-neon-violet/30';
@@ -138,7 +140,7 @@ export const ProductCard = ({
           >
             <span className="flex items-center">
               {enableCryptoPayment ? <Wallet className="mr-2 h-4 w-4" /> : getButtonIcon()}
-              {enableCryptoPayment ? "Купить за крипту" : buttonText}
+              {enableCryptoPayment ? t('crypto.buyForCrypto') : buttonText}
             </span>
           </Button>
         </CardContent>

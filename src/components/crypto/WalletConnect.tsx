@@ -6,6 +6,7 @@ import { Wallet, Copy, CheckCircle, AlertCircle } from "lucide-react";
 import { MagneticHover } from "@/components/animations/EnhancedScrollAnimations";
 import { toast } from "sonner";
 import { ethers } from "ethers";
+import { useTranslation } from "react-i18next";
 
 interface WalletConnectProps {
   onWalletConnect?: (address: string) => void;
@@ -16,10 +17,11 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
   const [address, setAddress] = useState<string>("");
   const [balance, setBalance] = useState<string>("0");
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useTranslation();
 
   const connectWallet = async () => {
     if (!window.ethereum) {
-      toast.error("MetaMask не установлен! Установите MetaMask для продолжения.");
+      toast.error(t('crypto.metaMaskNotInstalled'));
       return;
     }
 
@@ -41,11 +43,11 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
       setIsConnected(true);
       
       onWalletConnect?.(userAddress);
-      toast.success("Кошелек успешно подключен!");
+      toast.success(t('crypto.walletConnectSuccess'));
       
     } catch (error) {
       console.error("Ошибка подключения кошелька:", error);
-      toast.error("Ошибка подключения к кошельку");
+      toast.error(t('crypto.walletConnectionError'));
     } finally {
       setIsLoading(false);
     }
@@ -55,12 +57,12 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
     setIsConnected(false);
     setAddress("");
     setBalance("0");
-    toast.success("Кошелек отключен");
+    toast.success(t('crypto.walletDisconnected'));
   };
 
   const copyAddress = () => {
     navigator.clipboard.writeText(address);
-    toast.success("Адрес скопирован в буфер обмена");
+    toast.success(t('crypto.addressCopied'));
   };
 
   const formatAddress = (addr: string) => {
@@ -103,10 +105,10 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
               <Wallet className="h-16 w-16 mx-auto text-neon-violet rotate-glow" />
             </div>
             <h3 className="text-xl font-bold mb-2 text-foreground">
-              Подключить кошелек
+              {t('crypto.connectWallet')}
             </h3>
             <p className="text-muted-foreground mb-6">
-              Подключите MetaMask для совершения покупок
+              {t('crypto.connectWalletNote')}
             </p>
             <Button 
               onClick={connectWallet}
@@ -114,11 +116,11 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
               className="w-full bg-gradient-violet-gold hover:shadow-gold premium-glow pulse-glow"
             >
               {isLoading ? (
-                "Подключение..."
+                t('crypto.processingPayment')
               ) : (
                 <>
                   <Wallet className="mr-2 h-4 w-4" />
-                  Подключить MetaMask
+                  {t('crypto.connectMetaMask')}
                 </>
               )}
             </Button>
@@ -136,7 +138,7 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-neon-violet" />
               <Badge className="bg-neon-violet/20 text-neon-violet border-neon-violet/30">
-                Подключен
+                {t('crypto.walletConnected')}
               </Badge>
             </div>
             <Button 
@@ -145,13 +147,13 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
               onClick={disconnectWallet}
               className="text-muted-foreground hover:text-foreground"
             >
-              Отключить
+              {t('crypto.disconnect')}
             </Button>
           </div>
           
           <div className="space-y-3">
             <div>
-              <p className="text-sm text-muted-foreground mb-1">Адрес кошелька</p>
+              <p className="text-sm text-muted-foreground mb-1">{t('crypto.walletAddress')}</p>
               <div className="flex items-center gap-2">
                 <code className="text-sm bg-muted px-2 py-1 rounded font-mono">
                   {formatAddress(address)}
@@ -168,7 +170,7 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
             </div>
             
             <div>
-              <p className="text-sm text-muted-foreground mb-1">Баланс ETH</p>
+              <p className="text-sm text-muted-foreground mb-1">{t('crypto.balance')} ETH</p>
               <p className="text-lg font-bold text-foreground">
                 {balance} ETH
               </p>

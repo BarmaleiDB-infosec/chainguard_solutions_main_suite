@@ -53,6 +53,43 @@ const resources = {
       "product.airscout.description": "Intelligent SaaS platform for real-time monitoring, analysis and alerts on news, tools and innovations in selected niches with AI analytics and smart notifications.",
       "product.airscout.button": "Subscribe $15/month",
       
+      "product.manualAudit.title": "Manual Audit",
+      "product.manualAudit.description": "Professional manual security audit of websites or smart contracts for $120. Get a detailed report with recommendations for fixing vulnerabilities.",
+      "product.manualAudit.button": "Order Audit",
+      
+      // Crypto Payment
+      "crypto.connectWallet": "Connect Wallet",
+      "crypto.connectMetaMask": "Connect MetaMask",
+      "crypto.walletConnected": "Wallet Connected",
+      "crypto.disconnect": "Disconnect",
+      "crypto.walletAddress": "Wallet Address",
+      "crypto.balance": "Balance",
+      "crypto.paymentCrypto": "Pay with Crypto",
+      "crypto.buyForCrypto": "Buy with Crypto",
+      "crypto.productInfo": "Product Information",
+      "crypto.price": "Price",
+      "crypto.emailDelivery": "Email for delivery",
+      "crypto.selectPayment": "Select payment method",
+      "crypto.toPay": "To pay",
+      "crypto.rate": "Rate",
+      "crypto.walletNotConnected": "Connect wallet to continue",
+      "crypto.processingPayment": "Processing payment...",
+      "crypto.payAmount": "Pay {{amount}} {{currency}}",
+      "crypto.transactionSent": "Transaction sent! Waiting for confirmation...",
+      "crypto.paymentSuccessful": "Payment completed successfully!",
+      "crypto.transactionCancelled": "Transaction cancelled by user",
+      "crypto.insufficientFunds": "Insufficient funds in account",
+      "crypto.paymentError": "Error processing payment",
+      "crypto.deliveryNote": "After transaction confirmation, the product will be sent to the specified email",
+      "crypto.connectWalletNote": "Connect MetaMask wallet to make purchases",
+      "crypto.metaMaskNotInstalled": "MetaMask not installed! Install MetaMask to continue.",
+      "crypto.walletConnectSuccess": "Wallet connected successfully!",
+      "crypto.walletConnectionError": "Error connecting to wallet",
+      "crypto.walletDisconnected": "Wallet disconnected",
+      "crypto.addressCopied": "Address copied to clipboard",
+      "crypto.enterEmail": "Enter email to receive product",
+      "crypto.connectWalletRequired": "Connect wallet to make purchases",
+      
       // About
       "about.title": "Who We Are",
       "about.description": "ChainGuard is a pioneering ecosystem of tools dedicated to fortifying the Web3 landscape through cutting-edge security, insightful analytics, and seamless automation. Born from a vision to protect and empower the decentralized world, we are a collective of innovators, technologists, and blockchain enthusiasts committed to redefining trust in the digital age.",
@@ -99,7 +136,10 @@ const resources = {
       // Common
       "free": "Free",
       "freemium": "Freemium",
-      "price": "€{{amount}}"
+      "price": "€{{amount}}",
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success"
     }
   },
   ru: {
@@ -153,6 +193,43 @@ const resources = {
       "product.airscout.description": "Интеллектуальная SaaS-платформа для мониторинга, анализа и уведомлений в реальном времени о новостях, инструментах и инновациях в выбранных нишах с ИИ-аналитикой и умными уведомлениями.",
       "product.airscout.button": "Подписаться $15/месяц",
       
+      "product.manualAudit.title": "Ручной аудит",
+      "product.manualAudit.description": "Профессиональный ручной аудит безопасности веб-сайтов или смарт-контрактов за $120. Получите детальный отчет с рекомендациями по устранению уязвимостей.",
+      "product.manualAudit.button": "Заказать аудит",
+      
+      // Crypto Payment
+      "crypto.connectWallet": "Подключить кошелек",
+      "crypto.connectMetaMask": "Подключить MetaMask",
+      "crypto.walletConnected": "Кошелек подключен",
+      "crypto.disconnect": "Отключить",
+      "crypto.walletAddress": "Адрес кошелька",
+      "crypto.balance": "Баланс",
+      "crypto.paymentCrypto": "Оплата криптовалютой",
+      "crypto.buyForCrypto": "Купить за крипту",
+      "crypto.productInfo": "Информация о товаре",
+      "crypto.price": "Цена",
+      "crypto.emailDelivery": "Email для получения товара",
+      "crypto.selectPayment": "Выберите способ оплаты",
+      "crypto.toPay": "К оплате",
+      "crypto.rate": "Курс",
+      "crypto.walletNotConnected": "Подключите кошелек для продолжения",
+      "crypto.processingPayment": "Обработка платежа...",
+      "crypto.payAmount": "Оплатить {{amount}} {{currency}}",
+      "crypto.transactionSent": "Транзакция отправлена! Ожидание подтверждения...",
+      "crypto.paymentSuccessful": "Оплата прошла успешно!",
+      "crypto.transactionCancelled": "Транзакция отменена пользователем",
+      "crypto.insufficientFunds": "Недостаточно средств на счете",
+      "crypto.paymentError": "Ошибка при обработке платежа",
+      "crypto.deliveryNote": "После подтверждения транзакции товар будет отправлен на указанный email",
+      "crypto.connectWalletNote": "Подключите MetaMask для совершения покупок",
+      "crypto.metaMaskNotInstalled": "MetaMask не установлен! Установите MetaMask для продолжения.",
+      "crypto.walletConnectSuccess": "Кошелек успешно подключен!",
+      "crypto.walletConnectionError": "Ошибка подключения к кошельку",
+      "crypto.walletDisconnected": "Кошелек отключен",
+      "crypto.addressCopied": "Адрес скопирован в буфер обмена",
+      "crypto.enterEmail": "Введите email для получения товара",
+      "crypto.connectWalletRequired": "Подключите кошелек для совершения покупки",
+      
       // Contact
       "contact.button": "Связаться с нами",
       "contact.support": "Поддержка",
@@ -199,20 +276,29 @@ const resources = {
       // Common
       "free": "Бесплатно",
       "freemium": "Фримиум",
-      "price": "€{{amount}}"
+      "price": "€{{amount}}",
+      "loading": "Загрузка...",
+      "error": "Ошибка",
+      "success": "Успех"
     }
   }
 };
+
+// Получаем сохраненный язык из localStorage или используем английский по умолчанию
+const savedLanguage = localStorage.getItem('language') || 'en';
 
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en',
+    lng: savedLanguage,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },
+    // Добавляем обработчик изменения языка для сохранения в localStorage
+    saveMissing: false,
+    debug: false,
   });
 
 export default i18n;

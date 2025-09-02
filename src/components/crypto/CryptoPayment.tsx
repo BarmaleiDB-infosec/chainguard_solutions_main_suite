@@ -10,6 +10,7 @@ import { Wallet, CreditCard, CheckCircle, AlertCircle, Loader2 } from "lucide-re
 import { MagneticHover } from "@/components/animations/EnhancedScrollAnimations";
 import { toast } from "sonner";
 import { ethers } from "ethers";
+import { useTranslation } from "react-i18next";
 
 interface CryptoPaymentProps {
   productTitle: string;
@@ -31,6 +32,7 @@ export const CryptoPayment = ({
   const [paymentMethod, setPaymentMethod] = useState<'eth' | 'usdt'>('eth');
   const [isProcessing, setIsProcessing] = useState(false);
   const [email, setEmail] = useState('');
+  const { t } = useTranslation();
   
   // Примерные курсы (в реальном приложении получать с API)
   const ETH_RATE = 3400; // 1 ETH = $3400
@@ -49,12 +51,12 @@ export const CryptoPayment = ({
 
   const processPayment = async () => {
     if (!walletAddress) {
-      toast.error("Подключите кошелек для продолжения");
+      toast.error(t('crypto.connectWalletRequired'));
       return;
     }
 
     if (!email.trim()) {
-      toast.error("Введите email для получения товара");
+      toast.error(t('crypto.enterEmail'));
       return;
     }
 
@@ -73,13 +75,13 @@ export const CryptoPayment = ({
         value: amountWei
       });
       
-      toast.success("Транзакция отправлена! Ожидание подтверждения...");
+      toast.success(t('crypto.transactionSent'));
       
       // Ожидание подтверждения
       const receipt = await transaction.wait();
       
       if (receipt.status === 1) {
-        toast.success("Оплата прошла успешно!");
+        toast.success(t('crypto.paymentSuccessful'));
         
         // В реальном приложении здесь бы был вызов API для сохранения заказа
         console.log("Payment successful:", {
@@ -100,11 +102,11 @@ export const CryptoPayment = ({
       console.error("Payment error:", error);
       
       if (error.code === 'ACTION_REJECTED') {
-        toast.error("Транзакция отменена пользователем");
+        toast.error(t('crypto.transactionCancelled'));
       } else if (error.code === 'INSUFFICIENT_FUNDS') {
-        toast.error("Недостаточно средств на счете");
+        toast.error(t('crypto.insufficientFunds'));
       } else {
-        toast.error("Ошибка при обработке платежа");
+        toast.error(t('crypto.paymentError'));
       }
     } finally {
       setIsProcessing(false);
@@ -116,7 +118,7 @@ export const CryptoPayment = ({
       <DialogContent className="max-w-md bg-card/95 backdrop-blur-lg border-border/50">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-foreground">
-            Оплата криптовалютой
+            {t('crypto.paymentCrypto')}
           </DialogTitle>
         </DialogHeader>
         
@@ -126,7 +128,7 @@ export const CryptoPayment = ({
             <CardContent className="p-4">
               <h3 className="font-semibold text-foreground mb-2">{productTitle}</h3>
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground">Цена:</span>
+                <span className="text-muted-foreground">{t('crypto.price')}:</span>
                 <span className="font-bold text-lg text-foreground">${priceUSD}</span>
               </div>
             </CardContent>
@@ -134,7 +136,7 @@ export const CryptoPayment = ({
 
           {/* Email для доставки */}
           <div className="space-y-2">
-            <Label htmlFor="email">Email для получения товара</Label>
+            <Label htmlFor="email">{t('crypto.emailDelivery')}</Label>
             <Input
               id="email"
               type="email"
@@ -147,7 +149,7 @@ export const CryptoPayment = ({
 
           {/* Выбор метода оплаты */}
           <div className="space-y-3">
-            <Label>Выберите способ оплаты</Label>
+            <Label>{t('crypto.selectPayment')}</Label>
             <div className="grid grid-cols-2 gap-3">
               <MagneticHover strength={0.05}>
                 <Card 
@@ -198,13 +200,13 @@ export const CryptoPayment = ({
           {/* Итоговая информация */}
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">К оплате:</span>
+              <span className="text-muted-foreground">{t('crypto.toPay')}:</span>
               <span className="font-semibold">
                 {calculateCryptoAmount()} {paymentMethod.toUpperCase()}
               </span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Курс:</span>
+              <span className="text-muted-foreground">{t('crypto.rate')}:</span>
               <span className="text-muted-foreground">
                 1 {paymentMethod.toUpperCase()} = ${paymentMethod === 'eth' ? ETH_RATE : USDT_RATE}
               </span>
@@ -216,14 +218,14 @@ export const CryptoPayment = ({
             <div className="flex items-center gap-2 p-3 bg-neon-violet/10 rounded-lg border border-neon-violet/30">
               <CheckCircle className="h-4 w-4 text-neon-violet" />
               <span className="text-sm text-foreground">
-                Кошелек подключен: {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
+                {t('crypto.walletConnected')}: {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
               </span>
             </div>
           ) : (
             <div className="flex items-center gap-2 p-3 bg-destructive/10 rounded-lg border border-destructive/30">
               <AlertCircle className="h-4 w-4 text-destructive" />
               <span className="text-sm text-destructive">
-                Подключите кошелек для продолжения
+                {t('crypto.walletNotConnected')}
               </span>
             </div>
           )}
@@ -237,18 +239,18 @@ export const CryptoPayment = ({
             {isProcessing ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Обработка платежа...
+                {t('crypto.processingPayment')}
               </>
             ) : (
               <>
                 <CreditCard className="mr-2 h-4 w-4" />
-                Оплатить {calculateCryptoAmount()} {paymentMethod.toUpperCase()}
+                {t('crypto.payAmount', { amount: calculateCryptoAmount(), currency: paymentMethod.toUpperCase() })}
               </>
             )}
           </Button>
 
           <div className="text-xs text-muted-foreground text-center">
-            После подтверждения транзакции товар будет отправлен на указанный email
+            {t('crypto.deliveryNote')}
           </div>
         </div>
       </DialogContent>

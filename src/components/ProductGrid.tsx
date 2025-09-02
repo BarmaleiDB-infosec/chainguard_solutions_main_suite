@@ -80,11 +80,11 @@ export const ProductGrid = () => {
     },
     {
       id: 6,
-      title: "Ручной аудит",
-      description: "Профессиональный ручной аудит безопасности веб-сайтов или смарт-контрактов за $120. Получите детальный отчет с рекомендациями по устранению уязвимостей.",
+      title: t('product.manualAudit.title'),
+      description: t('product.manualAudit.description'),
       price: "$120",
       category: "Security",
-      buttonText: "Заказать аудит",
+      buttonText: t('product.manualAudit.button'),
       isPremium: true,
       isFree: false,
       enableCryptoPayment: true,
@@ -105,7 +105,7 @@ export const ProductGrid = () => {
   };
 
   const handleWalletRequired = () => {
-    toast.error("Подключите кошелек для совершения покупки");
+    toast.error(t('crypto.connectWalletRequired'));
   };
 
   const tabsData = [
