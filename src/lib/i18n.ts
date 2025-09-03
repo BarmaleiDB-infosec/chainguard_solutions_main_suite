@@ -53,9 +53,9 @@ const resources = {
       "product.airscout.description": "Intelligent SaaS platform for real-time monitoring, analysis and alerts on news, tools and innovations in selected niches with AI analytics and smart notifications.",
       "product.airscout.button": "Subscribe $15/month",
       
-      "product.manualAudit.title": "Manual Audit",
-      "product.manualAudit.description": "Professional manual security audit of websites or smart contracts for $120. Get a detailed report with recommendations for fixing vulnerabilities.",
-      "product.manualAudit.button": "Order Audit",
+      "product.manualAudit.title": "Manual Testing",
+      "product.manualAudit.description": "Professional manual security testing of websites or smart contracts for $120. Get a detailed report with recommendations for fixing vulnerabilities.",
+      "product.manualAudit.button": "Order Testing",
       
       // Crypto Payment
       "crypto.connectWallet": "Connect Wallet",
@@ -193,9 +193,9 @@ const resources = {
       "product.airscout.description": "Интеллектуальная SaaS-платформа для мониторинга, анализа и уведомлений в реальном времени о новостях, инструментах и инновациях в выбранных нишах с ИИ-аналитикой и умными уведомлениями.",
       "product.airscout.button": "Подписаться $15/месяц",
       
-      "product.manualAudit.title": "Ручной аудит",
-      "product.manualAudit.description": "Профессиональный ручной аудит безопасности веб-сайтов или смарт-контрактов за $120. Получите детальный отчет с рекомендациями по устранению уязвимостей.",
-      "product.manualAudit.button": "Заказать аудит",
+      "product.manualAudit.title": "Ручное тестирование", 
+      "product.manualAudit.description": "Профессиональное ручное тестирование безопасности веб-сайтов или смарт-контрактов за $120. Получите детальный отчет с рекомендациями по устранению уязвимостей.",
+      "product.manualAudit.button": "Заказать тестирование",
       
       // Crypto Payment
       "crypto.connectWallet": "Подключить кошелек",

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Wallet, Copy, CheckCircle, AlertCircle } from "lucide-react";
+import { Wallet, Copy, CheckCircle, AlertCircle, LogOut } from "lucide-react";
 import { MagneticHover } from "@/components/animations/EnhancedScrollAnimations";
 import { toast } from "sonner";
 import { ethers } from "ethers";
@@ -10,9 +10,10 @@ import { useTranslation } from "react-i18next";
 
 interface WalletConnectProps {
   onWalletConnect?: (address: string) => void;
+  compact?: boolean;
 }
 
-export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
+export const WalletConnect = ({ onWalletConnect, compact = false }: WalletConnectProps) => {
   const [isConnected, setIsConnected] = useState(false);
   const [address, setAddress] = useState<string>("");
   const [balance, setBalance] = useState<string>("0");
@@ -95,6 +96,47 @@ export const WalletConnect = ({ onWalletConnect }: WalletConnectProps) => {
 
     checkConnection();
   }, [onWalletConnect]);
+
+  if (compact) {
+    return (
+      <div className="flex items-center">
+        {!isConnected ? (
+          <Button 
+            onClick={connectWallet}
+            variant="outline"
+            size="sm"
+            className="border-primary/30 hover:bg-primary/10 hover:border-primary"
+            disabled={isLoading}
+          >
+            <Wallet className="mr-2 h-4 w-4" />
+            {isLoading ? t('loading') : t('crypto.connectWallet')}
+          </Button>
+        ) : (
+          <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 px-3 py-1 bg-muted/50 rounded-full border border-primary/20">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-xs font-mono text-foreground">
+                {formatAddress(address)}
+              </span>
+              {balance && (
+                <span className="text-xs text-muted-foreground">
+                  {parseFloat(balance).toFixed(3)} ETH
+                </span>
+              )}
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={disconnectWallet}
+              className="h-8 w-8 p-0 hover:bg-destructive/10"
+            >
+              <LogOut className="h-4 w-4 text-destructive" />
+            </Button>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   if (!isConnected) {
     return (

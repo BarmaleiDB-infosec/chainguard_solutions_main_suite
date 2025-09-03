@@ -10,12 +10,14 @@ import { Shield, Menu, User, Settings, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { WalletConnect } from "./crypto/WalletConnect";
 
 /**
  * Header Component with Navigation and User Menu
  */
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [walletAddress, setWalletAddress] = useState<string>("");
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -31,9 +33,9 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
-      <div className="container mx-auto px-4 py-1">
-        <div className="flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 h-20">
+      <div className="container mx-auto px-4 py-3 h-full">
+        <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div 
             className="flex items-center space-x-3 cursor-pointer"
@@ -76,6 +78,9 @@ export const Header = () => {
           {/* User Menu */}
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
+            <div className="hidden md:block">
+              <WalletConnect onWalletConnect={setWalletAddress} compact />
+            </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button 

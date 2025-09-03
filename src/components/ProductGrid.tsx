@@ -148,13 +148,13 @@ export const ProductGrid = () => {
             ))}
           </TabsList>
 
-          {tabsData.map((tab) => (
+        {tabsData.map((tab) => (
             <TabsContent key={tab.value} value={tab.value} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                 {filterProducts(tab.value).map((product, index) => (
                   <div 
                     key={product.id}
-                    className="slide-in-glow"
+                    className="slide-in-glow h-full"
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <ProductCard
