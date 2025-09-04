@@ -1,6 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { EnhancedCard, EnhancedCardContent, EnhancedCardDescription, EnhancedCardHeader, EnhancedCardTitle } from "@/components/ui/enhanced-card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SoonBadge } from "@/components/ui/badge-soon";
 import { ExternalLink, Download, Play, Wallet } from "lucide-react";
 import { MagneticHover } from "@/components/animations/EnhancedScrollAnimations";
 import { CryptoPayment } from "@/components/crypto/CryptoPayment";
@@ -16,6 +17,7 @@ interface ProductCardProps {
   buttonUrl?: string;
   isPremium?: boolean;
   isFree?: boolean;
+  isComingSoon?: boolean;
   enableCryptoPayment?: boolean;
   priceUSD?: number;
   walletAddress?: string;
@@ -35,6 +37,7 @@ export const ProductCard = ({
   buttonUrl,
   isPremium = false,
   isFree = false,
+  isComingSoon = false,
   enableCryptoPayment = false,
   priceUSD = 0,
   walletAddress,
@@ -76,65 +79,53 @@ export const ProductCard = ({
 
   return (
     <MagneticHover strength={0.1}>
-      <Card className="group card-hover-lift perspective-card transform-3d border-border/50 h-full flex flex-col bg-card/90 backdrop-blur-lg relative overflow-hidden">
+      <EnhancedCard className="h-full flex flex-col relative overflow-hidden">
         {/* Animated border effect */}
         <div className="absolute inset-0 bg-gradient-neon opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-lg"></div>
         
-        {/* Floating elements for premium cards */}
-        {isPremium && (
-          <div className="absolute top-2 right-2 w-3 h-3 bg-gradient-violet-gold rounded-full animate-pulse"></div>
+        {/* Coming Soon Badge */}
+        {isComingSoon && (
+          <div className="absolute top-2 right-2 z-20">
+            <SoonBadge variant="default" size="sm" />
+          </div>
         )}
         
-        <CardHeader className="pb-4 relative z-10">
+        <EnhancedCardHeader className="pb-4 relative z-10">
           <div className="flex items-start justify-between mb-3">
             <Badge 
               variant="outline" 
-              className={`${getCategoryColor(category)} border futuristic-border`}
+              className={`${getCategoryColor(category)} border`}
             >
               {category}
             </Badge>
-            {isPremium && (
-              <Badge className="bg-gradient-violet-gold text-primary-foreground premium-glow animate-pulse">
-                Pro
-              </Badge>
-            )}
           </div>
           
-          <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+          <EnhancedCardTitle className="text-xl font-bold">
             {title}
-          </CardTitle>
+          </EnhancedCardTitle>
           
-          <CardDescription className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+          <EnhancedCardDescription className="leading-relaxed">
             {description}
-          </CardDescription>
-        </CardHeader>
+          </EnhancedCardDescription>
+        </EnhancedCardHeader>
 
-        <CardContent className="flex-1 flex flex-col justify-between relative z-10">
-          <div className="mb-6">
-            <div className="text-3xl font-bold text-foreground group-hover:scale-110 transition-transform duration-300">
-              {isFree ? (
-                <span className="text-neon-gold">Free</span>
-              ) : (
-                <span className="bg-gradient-violet-gold bg-clip-text text-transparent">
+        <EnhancedCardContent className="flex-1 flex flex-col justify-between relative z-10">
+          {!isComingSoon && (
+            <div className="mb-6">
+              <div className="text-3xl font-bold text-foreground">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {price}
                 </span>
-              )}
-            </div>
-            {isPremium && (
-              <div className="text-xs text-muted-foreground mt-1 opacity-70">
-                Premium features included
               </div>
-            )}
-          </div>
+            </div>
+          )}
 
           <Button 
-            variant={isFree ? "outline" : isPremium ? "default" : "secondary"}
-            className={`w-full micro-bounce ripple-effect transition-all duration-300 ${
-              isFree 
-                ? "border-neon-gold text-neon-gold hover:bg-neon-gold hover:text-background futuristic-border" 
-                : isPremium 
-                  ? "bg-gradient-violet-gold hover:shadow-gold premium-glow pulse-glow" 
-                  : "hover:shadow-neon subtle-glow"
+            disabled={isComingSoon}
+            className={`w-full transition-all duration-300 ${
+              isComingSoon 
+                ? "bg-muted text-muted-foreground cursor-not-allowed"
+                : "bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white"
             }`}
             onClick={handleButtonClick}
           >
@@ -143,7 +134,7 @@ export const ProductCard = ({
               {enableCryptoPayment ? t('crypto.buyForCrypto') : buttonText}
             </span>
           </Button>
-        </CardContent>
+        </EnhancedCardContent>
 
         {/* Модальное окно оплаты */}
         {enableCryptoPayment && (
@@ -156,7 +147,7 @@ export const ProductCard = ({
             walletAddress={walletAddress}
           />
         )}
-      </Card>
+      </EnhancedCard>
     </MagneticHover>
   );
 };

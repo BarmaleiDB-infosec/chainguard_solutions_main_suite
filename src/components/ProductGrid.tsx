@@ -72,24 +72,23 @@ export const ProductGrid = () => {
       category: "AI",
       buttonText: t('product.airscout.button'),
       buttonUrl: "https://payeer.com/airscout-payment",
-      isPremium: true,
+      isPremium: false,
       isFree: false,
-      enableCryptoPayment: true,
-      priceUSD: 15,
+      isComingSoon: true,
       features: ["REAL-TIME MONITORING", "AI ANALYTICS", "SMART NOTIFICATIONS", "MULTI-NICHE SUPPORT"]
     },
     {
       id: 6,
-      title: t('product.manualAudit.title'),
-      description: t('product.manualAudit.description'),
+      title: t('product.manualTesting.title'),
+      description: t('product.manualTesting.description'),
       price: "$120",
       category: "Security",
-      buttonText: t('product.manualAudit.button'),
-      isPremium: true,
+      buttonText: t('product.manualTesting.button'),
+      isPremium: false,
       isFree: false,
       enableCryptoPayment: true,
       priceUSD: 120,
-      features: ["РУЧНАЯ ПРОВЕРКА", "ДЕТАЛЬНЫЙ ОТЧЕТ", "РЕКОМЕНДАЦИИ", "ПОДДЕРЖКА"]
+      features: ["MANUAL VERIFICATION", "DETAILED REPORT", "RECOMMENDATIONS", "SUPPORT"]
     }
   ];
 
@@ -166,6 +165,7 @@ export const ProductGrid = () => {
                       buttonUrl={product.buttonUrl}
                       isPremium={product.isPremium}
                       isFree={product.isFree}
+                      isComingSoon={product.isComingSoon}
                       enableCryptoPayment={product.enableCryptoPayment}
                       priceUSD={product.priceUSD}
                       walletAddress={walletAddress}

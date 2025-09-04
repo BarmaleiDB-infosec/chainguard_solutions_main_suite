@@ -49,13 +49,14 @@ const resources = {
       "product.defiSafety.description": "90-sec Rug Check PDF guide with comprehensive templates and real case studies.",
       "product.defiSafety.button": "Buy PDF Guide",
       
-      "product.airscout.title": "AirScout",
-      "product.airscout.description": "Intelligent SaaS platform for real-time monitoring, analysis and alerts on news, tools and innovations in selected niches with AI analytics and smart notifications.",
-      "product.airscout.button": "Subscribe $15/month",
+      "product.airscout.title": "AirScout AI",
+      "product.airscout.description": "AI-powered airdrop hunting and portfolio tracking with real-time notifications and analytics.",
+      "product.airscout.button": "Coming Soon",
+      "product.airscout.badge": "Soon",
       
-      "product.manualAudit.title": "Manual Testing",
-      "product.manualAudit.description": "Professional manual security testing of websites or smart contracts for $120. Get a detailed report with recommendations for fixing vulnerabilities.",
-      "product.manualAudit.button": "Order Testing",
+      "product.manualTesting.title": "Manual Testing",
+      "product.manualTesting.description": "Professional manual security testing of smart contracts and DeFi protocols by certified experts.",
+      "product.manualTesting.button": "Order Testing",
       
       // Crypto Payment
       "crypto.connectWallet": "Connect Wallet",
@@ -189,13 +190,14 @@ const resources = {
       "product.defiSafety.description": "90-секундное PDF руководство по проверке раг-пулов с комплексными шаблонами и реальными кейсами.",
       "product.defiSafety.button": "Купить PDF руководство",
       
-      "product.airscout.title": "AirScout",
-      "product.airscout.description": "Интеллектуальная SaaS-платформа для мониторинга, анализа и уведомлений в реальном времени о новостях, инструментах и инновациях в выбранных нишах с ИИ-аналитикой и умными уведомлениями.",
-      "product.airscout.button": "Подписаться $15/месяц",
+      "product.airscout.title": "AirScout ИИ",
+      "product.airscout.description": "ИИ-платформа для охоты за аирдропами и отслеживания портфеля с уведомлениями в реальном времени.",
+      "product.airscout.button": "Скоро",
+      "product.airscout.badge": "Скоро",
       
-      "product.manualAudit.title": "Ручное тестирование", 
-      "product.manualAudit.description": "Профессиональное ручное тестирование безопасности веб-сайтов или смарт-контрактов за $120. Получите детальный отчет с рекомендациями по устранению уязвимостей.",
-      "product.manualAudit.button": "Заказать тестирование",
+      "product.manualTesting.title": "Ручное Тестирование", 
+      "product.manualTesting.description": "Профессиональное ручное тестирование безопасности смарт-контрактов и DeFi протоколов сертифицированными экспертами.",
+      "product.manualTesting.button": "Заказать Тестирование",
       
       // Crypto Payment
       "crypto.connectWallet": "Подключить кошелек",
