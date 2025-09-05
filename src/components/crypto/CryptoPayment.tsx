@@ -11,6 +11,7 @@ import { MagneticHover } from "@/components/animations/EnhancedScrollAnimations"
 import { toast } from "sonner";
 import { ethers } from "ethers";
 import { useTranslation } from "react-i18next";
+import { useCryptoPrices } from "@/hooks/useCryptoPrices";
 
 interface CryptoPaymentProps {
   productTitle: string;
@@ -34,18 +35,13 @@ export const CryptoPayment = ({
   const [email, setEmail] = useState('');
   const { t } = useTranslation();
   
-  // Данные криптовалют с актуальными ценами
-  const prices = {
-    ETH: { current_price: 3400, price_change_percentage_24h: 2.5 },
-    BTC: { current_price: 65000, price_change_percentage_24h: 1.2 },
-    USDT: { current_price: 1, price_change_percentage_24h: 0.1 }
-  };
+  // Получаем реальные цены криптовалют
+  const { prices, loading: pricesLoading, convertUSDToCrypto, getPriceChange } = useCryptoPrices();
   
   const RECIPIENT_ADDRESS = "0x742C16c0ACa8E0b4f9C0c3d3b57b88b7CbFC5888";
   
   const getCryptoAmount = (crypto: string) => {
-    const price = prices[crypto as keyof typeof prices]?.current_price || 1;
-    return (priceUSD / price).toFixed(6);
+    return convertUSDToCrypto(priceUSD, crypto).toFixed(6);
   };
 
   const processPayment = async () => {
@@ -128,35 +124,64 @@ export const CryptoPayment = ({
 
           <div className="space-y-3">
             <Label>{t('crypto.selectPayment')}</Label>
-            <div className="grid grid-cols-3 gap-3">
-              {Object.entries(prices).map(([crypto, data]) => (
-                <MagneticHover key={crypto} strength={0.05}>
-                  <Card 
-                    className={`cursor-pointer transition-all duration-300 border-2 ${
-                      selectedCrypto === crypto 
-                        ? "border-primary bg-primary/10 shadow-neon" 
-                        : "border-border/50 hover:border-primary/50"
-                    }`}
-                    onClick={() => setSelectedCrypto(crypto)}
-                  >
+            {pricesLoading ? (
+              <div className="grid grid-cols-3 gap-3">
+                {[1, 2, 3].map((i) => (
+                  <Card key={i} className="border-border/50">
                     <CardContent className="p-3 text-center">
-                      <div className="font-semibold text-sm">{crypto}</div>
-                      <div className="text-xs text-muted-foreground">
-                        ${data.current_price.toLocaleString()}
-                      </div>
-                      <div className="text-xs font-mono text-primary font-bold">
-                        {getCryptoAmount(crypto)}
-                      </div>
+                      <div className="h-4 bg-muted animate-pulse rounded mb-2" />
+                      <div className="h-3 bg-muted/50 animate-pulse rounded mb-2" />
+                      <div className="h-3 bg-muted/30 animate-pulse rounded" />
                     </CardContent>
                   </Card>
-                </MagneticHover>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-3 gap-3">
+                {Object.entries(prices).map(([crypto, data]) => {
+                  const priceChange = getPriceChange(crypto);
+                  const isPositive = priceChange >= 0;
+                  
+                  return (
+                    <MagneticHover key={crypto} strength={0.05}>
+                      <Card 
+                        className={`cursor-pointer transition-all duration-300 border-2 ${
+                          selectedCrypto === crypto 
+                            ? "border-primary bg-primary/10 shadow-neon" 
+                            : "border-border/50 hover:border-primary/50"
+                        }`}
+                        onClick={() => setSelectedCrypto(crypto)}
+                      >
+                        <CardContent className="p-3 text-center">
+                          <div className="font-semibold text-sm">{crypto}</div>
+                          <div className="text-xs text-muted-foreground">
+                            ${data.current_price.toLocaleString()}
+                          </div>
+                          <div className="flex items-center justify-center gap-1 text-xs mb-1">
+                            {isPositive ? (
+                              <TrendingUp className="h-2.5 w-2.5 text-green-500" />
+                            ) : (
+                              <ArrowUpDown className="h-2.5 w-2.5 text-red-500" />
+                            )}
+                            <span className={isPositive ? "text-green-500" : "text-red-500"}>
+                              {isPositive ? "+" : ""}{priceChange.toFixed(2)}%
+                            </span>
+                          </div>
+                          <div className="text-xs font-mono text-primary font-bold">
+                            {getCryptoAmount(crypto)}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </MagneticHover>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <Button 
             onClick={processPayment}
-            disabled={!walletAddress || isProcessing || !email.trim()}
+            disabled={!walletAddress || isProcessing || !email.trim() || pricesLoading}
             className="w-full bg-gradient-violet-gold hover:shadow-gold premium-glow"
           >
             {isProcessing ? (
