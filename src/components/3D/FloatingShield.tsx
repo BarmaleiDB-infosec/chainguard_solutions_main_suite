@@ -14,18 +14,30 @@ export const FloatingShield = () => {
       if (!shieldRef.current) return;
       
       const rect = shieldRef.current.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
+      const isHovering = e.clientX >= rect.left && e.clientX <= rect.right && 
+                        e.clientY >= rect.top && e.clientY <= rect.bottom;
       
-      const deltaX = (e.clientX - centerX) / 10;
-      const deltaY = (e.clientY - centerY) / 10;
-      
-      shieldRef.current.style.transform = `
-        perspective(1000px) 
-        rotateY(${deltaX}deg) 
-        rotateX(${-deltaY}deg) 
-        translateZ(50px)
-      `;
+      if (isHovering && !e.buttons) {
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const deltaX = (e.clientX - centerX) / 10;
+        const deltaY = (e.clientY - centerY) / 10;
+        
+        shieldRef.current.style.transform = `
+          perspective(1000px) 
+          rotateY(${deltaX}deg) 
+          rotateX(${-deltaY}deg) 
+          translateZ(50px)
+        `;
+      } else {
+        shieldRef.current.style.transform = `
+          perspective(1000px) 
+          rotateY(0deg) 
+          rotateX(0deg) 
+          translateZ(50px)
+        `;
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);

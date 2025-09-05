@@ -73,10 +73,10 @@ export const WalletConnect = ({ onWalletConnect, compact = false }: WalletConnec
   // Проверка подключения при загрузке
   useEffect(() => {
     const checkConnection = async () => {
-      if (window.ethereum) {
+      if (window.ethereum && !address) {
         try {
           const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-          if (accounts.length > 0) {
+          if (accounts.length > 0 && !isConnected) {
             const provider = new ethers.BrowserProvider(window.ethereum);
             const signer = await provider.getSigner();
             const userAddress = await signer.getAddress();
@@ -95,7 +95,7 @@ export const WalletConnect = ({ onWalletConnect, compact = false }: WalletConnec
     };
 
     checkConnection();
-  }, [onWalletConnect]);
+  }, [onWalletConnect, address, isConnected]);
 
   if (compact) {
     return (

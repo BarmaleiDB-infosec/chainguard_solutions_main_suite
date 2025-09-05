@@ -10,21 +10,35 @@ export const CyberCube = ({ size = 100, autoRotate = true }: { size?: number; au
 
   useEffect(() => {
     if (!autoRotate) {
+      const cubeRef = { current: null as HTMLDivElement | null };
+      
       const handleMouseMove = (e: MouseEvent) => {
-        setMousePosition({
-          x: (e.clientX / window.innerWidth - 0.5) * 20,
-          y: (e.clientY / window.innerHeight - 0.5) * 20,
-        });
+        const cubeElement = document.querySelector(`[data-cube-size="${size}"]`) as HTMLDivElement;
+        if (cubeElement) {
+          const rect = cubeElement.getBoundingClientRect();
+          const isHovering = e.clientX >= rect.left && e.clientX <= rect.right && 
+                            e.clientY >= rect.top && e.clientY <= rect.bottom;
+          
+          if (isHovering && !e.buttons) {
+            setMousePosition({
+              x: (e.clientX / window.innerWidth - 0.5) * 20,
+              y: (e.clientY / window.innerHeight - 0.5) * 20,
+            });
+          } else {
+            setMousePosition({ x: 0, y: 0 });
+          }
+        }
       };
 
       window.addEventListener('mousemove', handleMouseMove);
       return () => window.removeEventListener('mousemove', handleMouseMove);
     }
-  }, [autoRotate]);
+  }, [autoRotate, size]);
 
   return (
     <div 
       className="relative mx-auto"
+      data-cube-size={size}
       style={{ 
         width: size, 
         height: size,
