@@ -42,6 +42,7 @@ export const WalletConnect = ({ onWalletConnect, compact = false }: WalletConnec
       setAddress(userAddress);
       setBalance(parseFloat(balanceInEth).toFixed(4));
       setIsConnected(true);
+      localStorage.removeItem('walletDisconnected');
       
       onWalletConnect?.(userAddress);
       toast.success(t('crypto.walletConnectSuccess'));
@@ -58,6 +59,7 @@ export const WalletConnect = ({ onWalletConnect, compact = false }: WalletConnec
     setIsConnected(false);
     setAddress("");
     setBalance("0");
+    localStorage.setItem('walletDisconnected', 'true');
     toast.success(t('crypto.walletDisconnected'));
   };
 
@@ -73,7 +75,9 @@ export const WalletConnect = ({ onWalletConnect, compact = false }: WalletConnec
   // Проверка подключения при загрузке
   useEffect(() => {
     const checkConnection = async () => {
-      if (window.ethereum && !address) {
+      const wasDisconnected = localStorage.getItem('walletDisconnected');
+      
+      if (window.ethereum && !address && !wasDisconnected) {
         try {
           const accounts = await window.ethereum.request({ method: 'eth_accounts' });
           if (accounts.length > 0 && !isConnected) {
