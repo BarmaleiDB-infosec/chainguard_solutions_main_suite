@@ -8,6 +8,7 @@ import { useLanguagePersistence } from "@/hooks/useLanguagePersistence";
 import { PageTransition } from "@/components/animations/PageTransition";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
+import Education from "./pages/Education";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Auth from "./pages/Auth";
@@ -30,6 +31,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/education" element={<Education />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/auth" element={<Auth />} />

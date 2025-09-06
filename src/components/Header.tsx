@@ -67,6 +67,13 @@ export const Header = () => {
               {t('products')}
             </Button>
             <Button 
+              variant="ghost" 
+              onClick={() => navigate("/education")}
+              className="text-foreground hover:text-primary"
+            >
+              {t('education')}
+            </Button>
+            <Button 
               variant="ghost"
               onClick={handleAboutClick}
               className="text-foreground hover:text-primary"
@@ -145,6 +152,13 @@ export const Header = () => {
                 className="justify-start"
               >
                 {t('products')}
+              </Button>
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate("/education")}
+                className="justify-start"
+              >
+                {t('education')}
               </Button>
               <Button 
                 variant="ghost"
